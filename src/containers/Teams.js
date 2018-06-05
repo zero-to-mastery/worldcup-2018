@@ -37,11 +37,13 @@ class Teams extends React.Component {
       .then(res => res.json())
       .then(data => {
         this.setState({teams: data.teams})
+          console.log(this.state)
       })
   }
 
   render() {
     const { classes } = this.props;
+    console.log(classes)
     const { teams } = this.state;
     return (
       teams.map((team, i) => (
