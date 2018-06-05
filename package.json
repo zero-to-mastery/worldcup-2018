@@ -2,6 +2,7 @@
   "name": "worldcup-2018",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://zero-to-mastery.github.io/worldcup-2018",
   "dependencies": {
     "@material-ui/core": "^1.2.0",
     "react": "^16.4.0",
