@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -20,14 +21,14 @@ const styles = {
 };
 
 function SimpleAppBar(props) {
-  const { classes } = props;
+  const { classes, history } = props;
   return (
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar>
           <img className={classes.logo} src={logo} alt='' />
           <div className={classes.navBtns}>
-            <Button color="inherit">Fixtures</Button>
+            <Button color="inherit" onClick={() => history.push(`/fixtures`)}>Fixtures</Button>
             <Button color="inherit">Results</Button>
             <Button color="inherit">Standings</Button>
             <Button color="inherit">Teams</Button>
@@ -42,4 +43,4 @@ SimpleAppBar.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleAppBar);
+export default withRouter(withStyles(styles)(SimpleAppBar));

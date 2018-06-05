@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import AppBar from './components/AppBar';
-import Teams from './components/Teams';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <div id="bg"> </div>
-        <AppBar />
-        <Teams />
-      </div>
-    );
-  }
+const App = (props) => {
+  return (
+    <div>
+      <div id="bg"> </div>
+      <AppBar />
+      {props.children}
+    </div>
+  );
 }
 
-export default App;
+export default withRouter(App);
