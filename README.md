@@ -7,6 +7,6 @@ This project fetches data from a [JSON file](https://raw.githubusercontent.com/l
 - Run the app by `npm start`
 
 ## Feel free to contribute
-You are all welcome to contribute to this project and more features and functionalities. Get creative! :)
+You are all welcome to contribute to this project and add more features and functionalities. Get creative! :)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app)
