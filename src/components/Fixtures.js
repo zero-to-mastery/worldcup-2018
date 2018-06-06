@@ -32,7 +32,8 @@ const styles = {
 
 class Fixtures extends React.Component {
     state = {
-        groups: {}
+        groups: {},
+        teams: []
     };
 
     //Fetch data from json and put it into an object
@@ -40,14 +41,15 @@ class Fixtures extends React.Component {
         fetch('https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json')
             .then(res => res.json())
             .then(data => {
-                this.setState({groups: data.groups})
+                this.setState({groups: data.groups, teams: data.teams})
             })
     }
 
     render() {
-        const {groups} = this.state;
+        const {groups, teams} = this.state;
         const {classes} = this.props;
         const groupnames = [];
+
         // Loop through the groups object from state
         // Then push the value and the matches into a new array to show the fixtures
         // We map them below to access their values
@@ -63,8 +65,12 @@ class Fixtures extends React.Component {
                             {groupname.groupname}
                         </Typography>
                         {groupname.matches.map((match, key) => {
+
+                           let home_team = teams.filter(team => team.id===match.home_team);
+                           let away_team = teams.filter(team => team.id===match.away_team);
+
                             return (
-                                <p id={key}>{match.home_team} - {match.away_team}</p>);
+                                <p key={key} id={key}>{home_team[0].name} - {away_team[0].name}</p>);
                             })
                         }
                     </CardContent>
