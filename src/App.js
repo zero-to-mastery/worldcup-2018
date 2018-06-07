@@ -5,8 +5,7 @@ import "./App.css";
 
 const App = props => {
   return (
-    <div>
-      <div id="bg"> </div>
+    <div className="App">
       <AppBar />
       {props.children}
     </div>
