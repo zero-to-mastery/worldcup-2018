@@ -23,6 +23,13 @@
   transform: translate(-50%, -50%);
 }
 
+@media screen and (max-width: 420px) {
+  #next_match {
+    width: 100%;
+    top: 20%;
+  }
+}
+
 #team_details {
   width: 100%;
   margin: 0;

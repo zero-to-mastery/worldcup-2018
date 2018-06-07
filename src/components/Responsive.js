@@ -9,7 +9,7 @@ import List from '@material-ui/core/List';
 import Hidden from '@material-ui/core/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
-import NavListItems  from './tileData';
+import MailFolderListItems  from './tileData';
 import logo from '../images/nav-logo.png'
 
 const drawerWidth = 240;
@@ -29,10 +29,6 @@ const styles = theme => ({
     width: '20%',
     cursor: 'pointer'
   },
-  logoMd: {
-    width: '40%',
-    cursor: 'pointer'
-  },
   navBtns: {
     textAlign: 'right',
     flex: 1
@@ -46,7 +42,7 @@ const styles = theme => ({
   }
 });
 
-class NavAppBar extends React.Component {
+class ResponsiveDrawer extends React.Component {
   state = {
     mobileOpen: false,
   };
@@ -60,7 +56,7 @@ class NavAppBar extends React.Component {
 
     const drawer = (
       <div>
-        <List><NavListItems /></List>
+        <List><MailFolderListItems /></List>
       </div>
     );
 
@@ -68,11 +64,8 @@ class NavAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static" color="default">
           <Toolbar>
-          <Hidden smDown>
             <img className={classes.logo} src={logo} alt='' onClick={() => history.push(`/`)}/>
-          </Hidden>
             <Hidden mdUp>
-              <img className={classes.logoMd} src={logo} alt='' onClick={() => history.push(`/`)}/>
               <div className={classes.menuIcon}>
                 <MenuIcon onClick={this.handleDrawerToggle}/>
               </div>
@@ -108,9 +101,9 @@ class NavAppBar extends React.Component {
   }
 }
 
-NavAppBar.propTypes = {
+ResponsiveDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withRouter(withStyles(styles, { withTheme: true })(NavAppBar));
+export default  withRouter(withStyles(styles, { withTheme: true })(ResponsiveDrawer));
