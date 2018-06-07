@@ -20,11 +20,7 @@ class StadiumPage extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <Map stadiums={this.state.stadiums} />
-      </div>
-    );
+    return <Map stadiums={this.state.stadiums} />;
   }
 }
 
