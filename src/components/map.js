@@ -1,9 +1,27 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import GoogleMap from "google-map-react";
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+const Stadium = ({ name, image }) => {
+  const style = {
+    fontSize: "14px",
+    border: "1px solid black",
+    textAlign: "center"
+  };
+  return (
+    <div style={style}>
+      {name}
+      <img src={image} />
+    </div>
+  );
+};
 
 export default class Map extends Component {
+  renderStadiums() {
+    return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
+      <Stadium key={id} lat={lat} lng={lng} name={name} />
+    ));
+  }
   render() {
     const style = {
       width: "calc(100% - 80px)",
@@ -24,13 +42,13 @@ export default class Map extends Component {
           defaultCenter={center}
           defaultZoom={5}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text={"Kreyser Avrora"}
-          />
+          {this.renderStadiums()}
         </GoogleMap>
       </div>
     );
   }
 }
+
+Map.propTypes = {
+  stadiums: PropTypes.array.isRequired
+};

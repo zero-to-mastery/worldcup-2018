@@ -8,6 +8,7 @@
     "@material-ui/icons": "^1.1.0",
     "google-map-react": "^1.0.3",
     "lodash": "^4.17.10",
+    "prop-types": "^15.6.1",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-router": "^4.2.0",
