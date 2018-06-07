@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import App from './App';
 import HomePage from './containers/HomePage/HomePage';
 import TeamsPage from './containers/TeamsPage/TeamsPage';
-import Fixtures from './components/Fixtures';
+import Fixtures from './containers/Fixtures/Fixtures';
 
 export default () => {
   return (

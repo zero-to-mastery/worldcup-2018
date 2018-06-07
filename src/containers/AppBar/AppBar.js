@@ -1,6 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,8 +9,8 @@ import List from '@material-ui/core/List';
 import Hidden from '@material-ui/core/Hidden';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
-import NavListItems  from './tileData';
-import logo from '../images/nav-logo.png'
+import NavListItems  from '../../components/NavListItems';
+import logo from '../../images/nav-logo.png'
 
 const drawerWidth = 240;
 
@@ -80,9 +80,8 @@ class NavAppBar extends React.Component {
             <Hidden className={classes.smDown} smDown implementation="css">
               <div className={classes.navBtns}>
                 <Button color="inherit" onClick={() => history.push(`/fixtures`)}>Fixtures</Button>
-                <Button color="inherit">Results</Button>
-                <Button color="inherit">Standings</Button>
                 <Button color="inherit" onClick={() => history.push(`/teams`)}>Teams</Button>
+                <Button color="inherit">Stadiums</Button>
               </div>
               </Hidden>
           </Toolbar>

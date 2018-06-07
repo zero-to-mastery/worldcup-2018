@@ -10,14 +10,11 @@ const NavListItems = (props) => {
     <ListItem button onClick={() => history.push(`/fixtures`)}>
       <ListItemText primary="Fixtures" />
     </ListItem>
-    <ListItem button>
-      <ListItemText primary="Results" />
-    </ListItem>
-    <ListItem button>
-      <ListItemText primary="Standings" />
-    </ListItem>
     <ListItem button onClick={() => history.push(`/teams`)}>
       <ListItemText primary="Teams" />
+    </ListItem>
+    <ListItem button>
+      <ListItemText primary="Stadiums" />
     </ListItem>
   </div>
   )

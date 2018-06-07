@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import AppBar from './components/AppBar';
+import AppBar from './containers/AppBar/AppBar';
 import './App.css';
 
 const App = (props) => {
