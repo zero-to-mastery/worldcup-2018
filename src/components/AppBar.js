@@ -13,6 +13,7 @@ const styles = {
   },
   logo: {
     width: '20%',
+    cursor: 'pointer'
   },
   navBtns: {
     textAlign: 'right',
@@ -26,12 +27,12 @@ function SimpleAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static" color="default">
         <Toolbar>
-          <img className={classes.logo} src={logo} alt='' />
+          <img className={classes.logo} src={logo} alt='' onClick={() => history.push(`/`)}/>
           <div className={classes.navBtns}>
             <Button color="inherit" onClick={() => history.push(`/fixtures`)}>Fixtures</Button>
             <Button color="inherit">Results</Button>
             <Button color="inherit">Standings</Button>
-            <Button color="inherit">Teams</Button>
+            <Button color="inherit" onClick={() => history.push(`/teams`)}>Teams</Button>
           </div>
         </Toolbar>
       </AppBar>

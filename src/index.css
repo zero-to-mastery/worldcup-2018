@@ -6,7 +6,7 @@ html {
 }
 
 #bg {
-  background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/bgcover.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/bgcover.jpg');
   background-size: cover;
   position: fixed;
   z-index: -1;

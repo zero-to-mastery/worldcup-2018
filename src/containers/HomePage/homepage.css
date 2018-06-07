@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900);
+
+#match_details {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+#next_match {
+  display: inline-block;
+  text-align: center;
+  background: rgba(0, 0, 0, .3);
+  padding: 15px 25px;
+  margin-bottom: 80px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#team_details {
+  width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.title {
+  display: inline-block;
+  font-size: 3rem;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+            0px 8px 13px rgba(0,0,0,0.1),
+            0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#vs {
+  display: inline-block;
+  font-size: 5rem;
+  padding: 0px 50px;
+  position: relative;
+  transform: translateY(10%);
+}
+
+.homepage_flag {
+  display: inline-block;
+  position: relative;
+  transform: translateY(20%);
+  padding: 0px 20px;
+}
+
+.flag_img_sm {
+  width: 100px;
+}
