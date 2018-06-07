@@ -27,6 +27,17 @@ const styles = {
     typographyH5: {
         fontSize: ".5em",
         fontWeight: 500
+    },
+    flag: {
+      height:25,
+      width:30,
+    },
+    teamsContainer:{
+      display:"flex",
+      flexDirection:"row",
+      justifyContent:"space-between",
+      alignItems:"center"
+
     }
 };
 
@@ -68,9 +79,13 @@ class Fixtures extends React.Component {
 
                            let home_team = teams.filter(team => team.id===match.home_team);
                            let away_team = teams.filter(team => team.id===match.away_team);
-
                             return (
-                                <p key={key} id={key}>{home_team[0].name} - {away_team[0].name}</p>);
+                                // Maybe there is a better way to do this with material ui?
+                                <div className={classes.teamsContainer} key={key} id={key}>
+                                    <img className={classes.flag} src={home_team[0].flag} alt=""/>
+                                    <p>{home_team[0].fifaCode} - {away_team[0].fifaCode}</p>
+                                    <img className={classes.flag} src={away_team[0].flag} alt=""/>
+                                </div>);
                             })
                         }
                     </CardContent>
