@@ -29,11 +29,12 @@ export default class Map extends Component {
   render() {
     const style = {
       width: "calc(100% - 80px)",
-      height: "100vh",
+      height: "calc(100vh - 200px)",
       backgroundColor: "white",
       border: "2px solid red",
       boxSizing: "border-box",
-      margin: "40px"
+      margin: "40px",
+      overflow: "hidden"
     };
     const moscowGPS = {
       lat: 55.7496,

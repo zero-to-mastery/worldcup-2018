@@ -5,13 +5,9 @@ html {
   text-align: center
 }
 
-#bg {
-  background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('./images/bgcover.jpg');
-  background-size: cover;
+.scroll_wrapper {
   position: fixed;
-  z-index: -1;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 100px;
+  bottom: 0;
+  overflow-y: scroll;
 }
