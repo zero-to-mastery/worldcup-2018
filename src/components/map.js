@@ -4,13 +4,14 @@ import GoogleMap from "google-map-react";
 
 const Stadium = ({ name, image }) => {
   const style = {
-    fontSize: "14px",
+    fontSize: "24px",
     border: "1px solid black",
     textAlign: "center",
     width: "80px",
     backgroundColor: "#fff",
     padding: "6px",
-    borderRadius: "4px"
+    borderRadius: "4px",
+    fontFamily: "Dusha"
   };
   return (
     <div style={style}>
