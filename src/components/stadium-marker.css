@@ -1,17 +1,44 @@
+.wrapper {
+  position: relative;
+  left: -80px;
+  width: 200px;
+  height: 30px;
+  cursor: pointer;
+}
+
 .marker {
-  width: 16px;
-  height: 16px;
-  background-color: #0C3A7B;
+  position: static;
+  width: 10px;
+  height: 10px;
+  margin: 0 auto;
+  background-color: #0B3F85;
   border-radius: 50%;
+  border: 6px solid #7594bf;
+  z-index: 1;
+}
+
+.wrapper:hover .marker {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
+  transition: 0.5s;
+}
+
+.wrapper:hover .label {
+  transition: 0.5s;
+  font-size: 18px;
+  top: -50px;
 }
 
 .label {
+  position: relative;
+  top: -44px;
+  white-space: nowrap;
   font-size: 14px;
-  text-align: center;
-  color: #000;
-  width: 80px;
+  color: #0B3F85;
   padding: 6px;
   border-radius: 4px;
   font-family: Dusha, sans-serif;
-  cursor: pointer
+  margin: 0 auto;
+  text-shadow: 1px 0 0 #7594bf, -1px 0 0 #7594bf, 0 1px 0 #7594bf, 0 -1px 0 #7594bf;
+  z-index: 2;
 }

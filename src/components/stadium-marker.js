@@ -4,15 +4,15 @@ import styles from "./stadium-marker.css";
 
 export default function StadiumMarker({ name }) {
   return (
-    <div>
-      <div style={styles.marker} />
-      <div style={styles.label}>{name}</div>
+    <div className={styles.wrapper}>
+      <div className={styles.marker} />
+      <div className={styles.label}>{name}</div>
     </div>
   );
 }
 
 StadiumMarker.propTypes = {
-  key: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   lat: PropTypes.number.isRequired,
   lng: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,

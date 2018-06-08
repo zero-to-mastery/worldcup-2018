@@ -1,0 +1,17 @@
+.title {
+  font-family: Dusha, sans-serif;
+  font-size: 24px;
+  line-height: 46px;
+}
+
+.wrapper {
+  width: 70%;
+  height: calc(100vh - 200px);
+  background-color: white;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin: 40px;
+  overflow: hidden;
+  border-radius: 14px;
+  min-height: 240px;
+}
