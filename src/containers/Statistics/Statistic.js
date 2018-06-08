@@ -21,6 +21,8 @@ const styles = theme => ({
     },
 });
 
+// Currently hard coded data
+
 class Statistics extends React.Component {
     constructor(props) {
         super(props);
