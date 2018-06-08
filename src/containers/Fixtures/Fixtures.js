@@ -53,6 +53,7 @@ class Fixtures extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isFetched: false,
       groups: {},
       teams: []
     };
@@ -64,7 +65,11 @@ class Fixtures extends React.Component {
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ groups: data.groups, teams: data.teams });
+        this.setState({
+          isFetched: true,
+          groups: data.groups,
+          teams: data.teams
+        });
       });
   }
 
@@ -150,7 +155,11 @@ class Fixtures extends React.Component {
   }
 
   render() {
-    return <div className="scroll_wrapper">{this.renderFixtures()}</div>;
+    if (this.state.isFetched) {
+      return <div className="scroll_wrapper">{this.renderFixtures()}</div>;
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
 
