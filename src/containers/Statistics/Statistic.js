@@ -10,15 +10,17 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
-    root: {
-        width: '50%',
+    parentDiv: {
+        width: '75%',
+        display: 'inline-flex'
+    },
+    paperContainer: {
+        width: '100%',
         marginTop: theme.spacing.unit * 3,
-        marginLeft: theme.spacing.unit * 50,
-        overflowX: 'auto',
     },
-    table: {
-        minWidth: 700,
-    },
+    root: {
+        marginTop: theme.spacing.unit * 3,
+    }
 });
 
 // Currently hard coded data
@@ -112,7 +114,8 @@ class Statistics extends React.Component {
 
         const { classes } = this.props;
         return (
-            <div>
+            <div className={classes.parentDiv}>
+                <div className={classes.paperContainer}>
                 < Paper className={classes.root} >
                     <Table className={classes.table}>
                         <TableHead>
@@ -142,6 +145,7 @@ class Statistics extends React.Component {
                         </TableBody>
                     </Table>
                 </Paper>
+                </div>
             </div >
         );
     }
