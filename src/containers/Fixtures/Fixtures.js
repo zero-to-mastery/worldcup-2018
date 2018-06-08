@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
@@ -85,7 +84,7 @@ class Fixtures extends React.Component {
             >
               {groupname.groupname}
             </Typography>
-            <Grid container spacing={10} className={classes.matchListCard}>
+            <Grid container spacing={8} className={classes.matchListCard}>
               {groupname.matches.map((match, key) => {
                 let home_team = teams.filter(team => team.id === match.home_team);
                 let away_team = teams.filter(team => team.id === match.away_team);
@@ -96,7 +95,7 @@ class Fixtures extends React.Component {
                   {home_team[0].name} - {away_team[0].name}
                 </p>*/
                 <Grid item xs={12} key={key} className={classes.fixtureCard}>
-                  <Grid container spacing={5}>
+                  <Grid container spacing={8}>
                     <Grid item xs={8} className={classes.fixtureTeams}>
                       <div className={classes.team}>
                         <img className={classes.flag} src={home_team[0].flag} alt=""/>
