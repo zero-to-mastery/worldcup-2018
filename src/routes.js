@@ -5,7 +5,7 @@ import HomePage from "./containers/HomePage/HomePage";
 import TeamsPage from "./containers/TeamsPage/TeamsPage";
 import StadiumsPage from "./containers/StadiumPage/StadiumPage";
 import Fixtures from "./containers/Fixtures/Fixtures";
-import Statistics from './containers/Statistics/Statistic';
+import Statistics from "./containers/Statistics/Statistic";
 
 export default () => {
   return (
