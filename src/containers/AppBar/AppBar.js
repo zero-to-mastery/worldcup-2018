@@ -106,6 +106,12 @@ class NavAppBar extends React.Component {
                 >
                   Stadiums
                 </Button>
+                <Button
+                  color="inherit"
+                  onClick={() => history.push("/statistics")}
+                >
+                  Statistics
+                </Button>
               </div>
             </Hidden>
           </Toolbar>
