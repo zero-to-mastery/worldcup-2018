@@ -1,35 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import GoogleMap from "google-map-react";
-
-const Stadium = ({ name, image }) => {
-  const style = {
-    fontSize: "24px",
-    border: "1px solid black",
-    textAlign: "center",
-    width: "80px",
-    backgroundColor: "#fff",
-    padding: "6px",
-    borderRadius: "4px",
-    fontFamily: "Dusha"
-  };
-  return (
-    <div style={style}>
-      <div>{name}</div>
-      <img src={image} style={{ marginTop: "6px" }} width={60} alt="" />
-    </div>
-  );
-};
+import StadiumMarker from "./stadium-marker";
 
 export default class Map extends Component {
   renderStadiums() {
     return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
-      <Stadium key={id} lat={lat} lng={lng} name={name} image={image} />
+      <StadiumMarker key={id} lat={lat} lng={lng} name={name} image={image} />
     ));
   }
   render() {
     const style = {
-      width: "calc(100% - 80px)",
+      width: "70%",
       height: "calc(100vh - 200px)",
       backgroundColor: "white",
       border: "2px solid red",

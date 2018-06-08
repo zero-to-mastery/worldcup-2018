@@ -1,0 +1,17 @@
+.marker {
+  width: 16px;
+  height: 16px;
+  background-color: #0C3A7B;
+  border-radius: 50%;
+}
+
+.label {
+  font-size: 14px;
+  text-align: center;
+  color: #000;
+  width: 80px;
+  padding: 6px;
+  border-radius: 4px;
+  font-family: Dusha, sans-serif;
+  cursor: pointer
+}
