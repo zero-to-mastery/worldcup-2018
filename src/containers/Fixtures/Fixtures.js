@@ -112,7 +112,7 @@ class Fixtures extends React.Component {
                     </Grid>
                     <Grid item xs={4} className={classes.datetime}>
                       <Typography>
-                        {matchDate.getDate() + "/" +matchDate.getMonth() + "/" + matchDate.getFullYear()}
+                        {matchDate.getDate() + "/" +(matchDate.getMonth()+1) + "/" + matchDate.getFullYear()}
                       </Typography>
                       <Typography>
                         {matchDate.getHours() + ":" +matchDate.getMinutes()+"0"}
