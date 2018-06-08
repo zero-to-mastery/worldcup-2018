@@ -10,6 +10,10 @@ class HomePage extends React.Component {
     knockout: {}
   };
 
+  /**
+   * @param  {object} groups
+   * @returns {object} match details
+   */
   getUpcomingMatchDetails(groups) {
     let groupnames = [];
     let matchDates = [];
@@ -69,6 +73,29 @@ class HomePage extends React.Component {
     }
     return _.isEmpty(upcomingMatchGroup) ? null : upcomingMatchGroup;
   }
+  /**
+   * @param  {string} type 'home_team' or 'away_team'
+   * @param  {object} matchDetails
+   * @returns {object} team details
+   */
+  
+  getTeam(type, matchDetails) {
+    let { teams, knockout } = this.state;
+    let myTeam;
+    
+    if(!_.isEmpty(matchDetails) && matchDetails.type !== 'winner') {
+      myTeam = teams.filter(team => team.id===matchDetails[type]);
+    } else {
+      _.values(knockout).some(knockout => {
+        if(knockout.name==='Semi-finals'){
+          type === 'home_team' ? myTeam = knockout.matches[0] : myTeam = knockout.matches[1];
+        }
+        return myTeam;
+      })
+      myTeam = teams.filter(team => team.id===myTeam.winner);
+    }
+    return myTeam;
+  }
 
   componentDidMount() {
     fetch('https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json')
@@ -78,7 +105,7 @@ class HomePage extends React.Component {
       })
   } 
   render() {
-    const {groups, teams, knockout} = this.state;
+    const {groups, knockout} = this.state;
     let matchDetails = this.getUpcomingMatchDetails(groups);
     let nextMatchDate = '';
 
@@ -91,28 +118,8 @@ class HomePage extends React.Component {
       });
     }
 
-    let home_team, away_team;
-    if(!_.isEmpty(matchDetails) && matchDetails.type !== 'winner') {
-      home_team = teams.filter(team => team.id===matchDetails.home_team);
-      away_team = teams.filter(team => team.id===matchDetails.away_team);
-    }
-    else {
-      _.values(knockout).some(knockout => {
-        if(knockout.name==='Semi-finals'){
-          home_team = knockout.matches[0];
-        }
-        return home_team;
-      })
-      home_team = teams.filter(team => team.id===home_team.winner);
-      
-      _.values(knockout).some(knockout => {
-        if(knockout.name==='Semi-finals'){
-          away_team = knockout.matches[1];
-        }
-        return away_team;
-      })
-      away_team = teams.filter(team => team.id===away_team.winner);
-    }
+    const home_team = this.getTeam('home_team', matchDetails);
+    const away_team = this.getTeam('away_team', matchDetails);
         
     return (
       <div>
