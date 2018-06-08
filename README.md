@@ -1,4 +1,4 @@
-# World Cup 2018
+# World Cup 2018 [![TravisCI Build Status](https://travis-ci.org/zero-to-mastery/worldcup-2018.svg?branch=master)](https://travis-ci.org/zero-to-mastery/ZtM-Job-Board)
 This project fetches data from a [JSON file](https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json) which contains all the worldcup 2018 details. Read more about it [here](https://github.com/lsv/fifa-worldcup-2018).
 
 Project Link: https://zero-to-mastery.github.io/worldcup-2018
