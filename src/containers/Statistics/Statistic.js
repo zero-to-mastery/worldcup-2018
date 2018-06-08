@@ -9,14 +9,16 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
 const styles = theme => ({
-  root: {
-    width: "50%",
-    marginTop: theme.spacing.unit * 3,
-    marginLeft: theme.spacing.unit * 50,
-    overflowX: "auto"
+  parentDiv: {
+    width: "75%",
+    display: "inline-flex"
   },
-  table: {
-    minWidth: 700
+  paperContainer: {
+    width: "100%",
+    marginTop: theme.spacing.unit * 3
+  },
+  root: {
+    marginTop: theme.spacing.unit * 3
   }
 });
 
@@ -110,32 +112,34 @@ class Statistics extends React.Component {
 
     const { classes } = this.props;
     return (
-      <div>
-        <Paper className={classes.root}>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Player</TableCell>
-                <TableCell numeric>Goals</TableCell>
-                <TableCell>Team</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{sortTopScorrer(this.state.topScorers)}</TableBody>
-          </Table>
-        </Paper>
+      <div className={classes.parentDiv}>
+        <div className={classes.paperContainer}>
+          <Paper className={classes.root}>
+            <Table className={classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Player</TableCell>
+                  <TableCell numeric>Goals</TableCell>
+                  <TableCell>Team</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>{sortTopScorrer(this.state.topScorers)}</TableBody>
+            </Table>
+          </Paper>
 
-        <Paper className={classes.root}>
-          <Table className={classes.table}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Player</TableCell>
-                <TableCell numeric>Assists</TableCell>
-                <TableCell>Team</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>{sortTopAssits(this.state.topAssits)}</TableBody>
-          </Table>
-        </Paper>
+          <Paper className={classes.root}>
+            <Table className={classes.table}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Player</TableCell>
+                  <TableCell numeric>Assists</TableCell>
+                  <TableCell>Team</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>{sortTopAssits(this.state.topAssits)}</TableBody>
+            </Table>
+          </Paper>
+        </div>
       </div>
     );
   }
