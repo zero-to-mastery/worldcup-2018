@@ -1,49 +1,37 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import GoogleMap from "google-map-react";
-
-const Stadium = ({ name, image }) => {
-  const style = {
-    fontSize: "14px",
-    border: "1px solid black",
-    textAlign: "center",
-    width: "80px",
-    backgroundColor: "#fff",
-    padding: "6px",
-    borderRadius: "4px"
-  };
-  return (
-    <div style={style}>
-      <div>{name}</div>
-      <img src={image} style={{ marginTop: "6px" }} width={60} alt="" />
-    </div>
-  );
-};
+import StadiumMarker from "./stadium-marker";
+import styles from "./map.css";
 
 export default class Map extends Component {
+  markerClickHandler(id, e) {
+    this.props.currentStadiumChangeHandler(id);
+  }
   renderStadiums() {
     return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
-      <Stadium key={id} lat={lat} lng={lng} name={name} image={image} />
+      <StadiumMarker
+        key={id}
+        id={id}
+        lat={lat}
+        lng={lng}
+        name={name}
+        image={image}
+        clickHandler={e => this.markerClickHandler(id, e)}
+      />
     ));
   }
   render() {
-    const style = {
-      width: "calc(100% - 80px)",
-      height: "calc(100vh - 200px)",
-      backgroundColor: "white",
-      border: "2px solid red",
-      boxSizing: "border-box",
-      margin: "40px",
-      overflow: "hidden"
-    };
     const moscowGPS = {
       lat: 55.7496,
       lng: 37.6237
     };
     return (
-      <div style={style}>
+      <div className={styles.wrapper}>
         <GoogleMap
-          bootstrapURLKeys={{ key: "AIzaSyDU6zRc99Xn7cX07akiYg38-ozZiXAscfE" }}
+          bootstrapURLKeys={{
+            key: "AIzaSyDU6zRc99Xn7cX07akiYg38-ozZiXAscfE"
+          }}
           defaultCenter={moscowGPS}
           defaultZoom={5}
         >
@@ -55,5 +43,6 @@ export default class Map extends Component {
 }
 
 Map.propTypes = {
-  stadiums: PropTypes.array.isRequired
+  stadiums: PropTypes.array.isRequired,
+  currentStadiumChangeHandler: PropTypes.func.isRequired
 };

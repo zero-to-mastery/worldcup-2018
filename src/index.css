@@ -11,3 +11,8 @@ html {
   bottom: 0;
   overflow-y: scroll;
 }
+
+@font-face {
+  font-family: 'Dusha';
+  src: url('./fonts/dusha.ttf') format('truetype');
+}

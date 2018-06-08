@@ -1,0 +1,17 @@
+.wrapper {
+  width: 40%;
+  background-color: white;
+  float: left;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.label {
+  font-family: "Dusha", sans-serif;
+  font-size: 30px;
+}
+
+.img {
+  width: 100%;
+  object-fit: cover;
+}

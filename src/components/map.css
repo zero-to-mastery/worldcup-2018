@@ -1,0 +1,12 @@
+.wrapper {
+  width: 60%;
+  height: calc(100vh - 160px);
+  background-color: white;
+  border: 2px solid white;
+  box-sizing: border-box;
+  margin-right: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  min-height: 240px;
+  float: left;
+}
