@@ -24,9 +24,10 @@ export default class Map extends Component {
     };
     return (
       <div className={styles.wrapper}>
-        <div className={styles.title}>Stadiums</div>
         <GoogleMap
-          bootstrapURLKeys={{ key: "AIzaSyDU6zRc99Xn7cX07akiYg38-ozZiXAscfE" }}
+          bootstrapURLKeys={{
+            key: "AIzaSyDU6zRc99Xn7cX07akiYg38-ozZiXAscfE"
+          }}
           defaultCenter={moscowGPS}
           defaultZoom={5}
         >

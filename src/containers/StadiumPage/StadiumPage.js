@@ -1,5 +1,6 @@
 import React from "react";
 import Map from "../../components/map";
+import Stadium from "../../components/stadium-description-card";
 import { withRouter } from "react-router";
 
 class StadiumPage extends React.Component {
@@ -20,7 +21,12 @@ class StadiumPage extends React.Component {
   }
 
   render() {
-    return <Map stadiums={this.state.stadiums} />;
+    return (
+      <div>
+        <Map stadiums={this.state.stadiums} />
+        <Stadium id={0} lat={0} lng={0} name={"Hello"} image={"hell"} />
+      </div>
+    );
   }
 }
 

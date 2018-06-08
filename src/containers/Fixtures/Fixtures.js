@@ -82,8 +82,7 @@ class Fixtures extends React.Component {
       groupnames.push({ groupname: value.name, matches: value.matches });
     }
 
-    return;
-    groupnames.map((groupname, i) => (
+    return groupnames.map((groupname, i) => (
       <Card key={i} className={classes.card}>
         <CardContent className={classes.cardContent}>
           <Typography
