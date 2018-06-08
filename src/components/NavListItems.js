@@ -16,6 +16,9 @@ const NavListItems = props => {
       <ListItem button onClick={() => history.push("/stadiums")}>
         <ListItemText primary="Stadiums" />
       </ListItem>
+      <ListItem button onClick={() => history.push("/statistics")}>
+        <ListItemText primary="Statistics" />
+      </ListItem>
     </div>
   );
 };
