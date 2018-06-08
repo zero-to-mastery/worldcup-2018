@@ -5,6 +5,7 @@ import HomePage from "./containers/HomePage/HomePage";
 import TeamsPage from "./containers/TeamsPage/TeamsPage";
 import StadiumsPage from "./containers/StadiumPage/StadiumPage";
 import Fixtures from "./containers/Fixtures/Fixtures";
+import Statistics from './containers/Statistics/Statistic';
 
 export default () => {
   return (
@@ -15,6 +16,7 @@ export default () => {
           <Route exact path="/teams" component={TeamsPage} />
           <Route exact path="/fixtures" component={Fixtures} />
           <Route exact path="/stadiums" component={StadiumsPage} />
+          <Route exact path="/statistics" component={Statistics} />
         </Switch>
       </App>
     </BrowserRouter>
