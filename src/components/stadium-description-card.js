@@ -5,7 +5,7 @@ import styles from "./stadium-description-card.css";
 export default function StadiumDescriptionCard({ name, image }) {
   return (
     <div className={styles.wrapper}>
-      <img src={image} alt="" />
+      <img className={styles.img} src={image} alt="" />
       <div className={styles.label}>{name}</div>
     </div>
   );

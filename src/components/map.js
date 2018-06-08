@@ -5,6 +5,9 @@ import StadiumMarker from "./stadium-marker";
 import styles from "./map.css";
 
 export default class Map extends Component {
+  markerClickHandler(id, e) {
+    this.props.currentStadiumChangeHandler(id);
+  }
   renderStadiums() {
     return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
       <StadiumMarker
@@ -14,6 +17,7 @@ export default class Map extends Component {
         lng={lng}
         name={name}
         image={image}
+        clickHandler={e => this.markerClickHandler(id, e)}
       />
     ));
   }
@@ -39,5 +43,6 @@ export default class Map extends Component {
 }
 
 Map.propTypes = {
-  stadiums: PropTypes.array.isRequired
+  stadiums: PropTypes.array.isRequired,
+  currentStadiumChangeHandler: PropTypes.func.isRequired
 };
