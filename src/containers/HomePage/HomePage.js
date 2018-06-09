@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React from "react";
 import { withRouter } from "react-router";
-import "./homepage.css";
+import styles from "./homepage.css";
 
 class HomePage extends React.Component {
   state = {
@@ -51,7 +51,7 @@ class HomePage extends React.Component {
       matchDates.sort(function(a, b) {
         return new Date(a) - new Date(b);
       });
-      matchDates.some((date, i) => {
+      matchDates.some(date => {
         if (new Date() < new Date(date)) {
           upcomingMatchDate = date;
           return true;
@@ -132,48 +132,64 @@ class HomePage extends React.Component {
     return (
       <div>
         {!_.isEmpty(matchDetails) && matchDetails.type !== "winner" ? (
-          <div id="match_details">
-            <div id="next_match">
+          <div className={styles.match_details}>
+            <div className={styles.next_match}>
               <span> Next Match - {nextMatchDate} </span>
             </div>
-            <div id="team_details">
-              <div className="homepage_flag">
-                <img className="flag_img_sm" src={home_team[0].flag} alt="" />
+            <div className={styles.team_details}>
+              <div className={styles.homepage_flag}>
+                <img
+                  className={styles.flag_img_sm}
+                  src={home_team[0].flag}
+                  alt=""
+                />
               </div>
-              <div className="title">
-                <span id="home_team">{home_team[0].name} </span>
+              <div className={styles.title}>
+                <span>{home_team[0].name} </span>
               </div>
-              <div id="vs">
+              <div className={styles.vs}>
                 <span> VS </span>
               </div>
-              <div className="title">
-                <span id="away_team"> {away_team[0].name} </span>
+              <div className={styles.title}>
+                <span> {away_team[0].name} </span>
               </div>
-              <div className="homepage_flag">
-                <img className="flag_img_sm" src={away_team[0].flag} alt="" />
+              <div className={styles.homepage_flag}>
+                <img
+                  className={styles.flag_img_sm}
+                  src={away_team[0].flag}
+                  alt=""
+                />
               </div>
             </div>
           </div>
         ) : !_.isEmpty(matchDetails) ? (
-          <div id="match_details">
-            <div id="next_match">
+          <div className={styles.match_details}>
+            <div className={styles.next_match}>
               <span> FIFA World Cup 2018 Winner - {matchDetails.winner} </span>
             </div>
-            <div id="team_details">
-              <div className="homepage_flag">
-                <img className="flag_img_sm" src={home_team[0].flag} alt="" />
+            <div className={styles.team_details}>
+              <div className={styles.homepage_flag}>
+                <img
+                  className={styles.flag_img_sm}
+                  src={home_team[0].flag}
+                  alt=""
+                />
               </div>
-              <div className="title">
-                <span id="home_team">{home_team[0].name} </span>
+              <div className={styles.title}>
+                <span>{home_team[0].name} </span>
               </div>
-              <div id="vs">
+              <div className={styles.vs}>
                 <span> VS </span>
               </div>
-              <div className="title">
-                <span id="away_team"> {away_team[0].name} </span>
+              <div className={styles.title}>
+                <span> {away_team[0].name} </span>
               </div>
-              <div className="homepage_flag">
-                <img className="flag_img_sm" src={away_team[0].flag} alt="" />
+              <div className={styles.homepage_flag}>
+                <img
+                  className={styles.flag_img_sm}
+                  src={away_team[0].flag}
+                  alt=""
+                />
               </div>
             </div>
           </div>
