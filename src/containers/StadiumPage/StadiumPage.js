@@ -3,7 +3,7 @@ import Map from "../../components/map";
 import Stadium from "../../components/stadium-description-card";
 import { withRouter } from "react-router";
 import Swal from "sweetalert2";
-import "./sweetalert.css";
+import "../../components/sweet-alert.css";
 
 class StadiumPage extends React.Component {
   constructor(props) {
