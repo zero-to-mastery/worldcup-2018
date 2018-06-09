@@ -4,8 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import indexStyle from "../../index.css";
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
 
@@ -70,7 +68,7 @@ teams:teams
                </Tabs>
                </AppBar>
                <div className={classes.test}>
-               {tabSelector === 0 && <GroupFixtures className={indexStyle.scroll_wrapper}  {...props} />}
+               {tabSelector === 0 && <GroupFixtures {...props} />}
                {tabSelector === 1 && <KnockoutFixtures />}
               </div>
           </div>
