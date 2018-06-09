@@ -2,6 +2,8 @@ import React from "react";
 import Map from "../../components/map";
 import Stadium from "../../components/stadium-description-card";
 import { withRouter } from "react-router";
+import Swal from 'sweetalert2'
+import '../../components/stadium-marker.css'
 
 class StadiumPage extends React.Component {
   constructor(props) {
@@ -24,6 +26,20 @@ class StadiumPage extends React.Component {
       });
   }
 
+  stadiumModal = () => {
+    if (this.state.currentStadium) {
+      const stadModal = this.state.currentStadium
+    Swal({
+      title: stadModal.name,
+      imageUrl: stadModal.image,
+      imageWidth: 400,
+      imageHeight: 200,
+      text: "Stadium Description",
+    })
+  }
+  }
+
+
   renderStadium() {
     if (this.state.currentStadium) {
       return (
@@ -42,6 +58,7 @@ class StadiumPage extends React.Component {
   currentStadiumChangeHandler(id) {
     const index = this.state.stadiums.findIndex(element => element.id === id);
     this.setState({ currentStadium: this.state.stadiums[index] });
+    this.setState({ show: true })
   }
 
   render() {
@@ -52,6 +69,7 @@ class StadiumPage extends React.Component {
           currentStadiumChangeHandler={this.currentStadiumChangeHandler}
         />
         {this.renderStadium()}
+        {this.stadiumModal()}
       </div>
     );
   }
