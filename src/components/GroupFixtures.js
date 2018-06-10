@@ -56,7 +56,7 @@ const styles = {
 
 const GroupFixtures = ({groupnames, teams, classes}) => {
 
-  return <div>{groupnames.map((groupname, i) => (
+  return groupnames.map((groupname, i) => (
       <Card key={i} className={classes.card}>
         <CardContent className={classes.cardContent}>
           <Typography
@@ -123,7 +123,7 @@ const GroupFixtures = ({groupnames, teams, classes}) => {
           </Grid>
         </CardContent>
       </Card>
-    ))}</div>
+    ))
 }
 
 GroupFixtures.propTypes = {
