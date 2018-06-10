@@ -62,7 +62,7 @@ class Statistics extends React.Component {
       <div className={styles.parentDiv}>
         <div className={styles.paperContainer}>
           <Paper className={styles.root}>
-            <StatisticTable title="Goals" data={this.state.topScorers}  />
+            <StatisticTable title="Goals" data={this.state.topScorers} className={styles.table} />
           </Paper>
 
           <Paper className={styles.root}>
