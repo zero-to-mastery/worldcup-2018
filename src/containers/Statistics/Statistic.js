@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -7,23 +6,9 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-
-const styles = theme => ({
-  parentDiv: {
-    width: "75%",
-    display: "inline-flex"
-  },
-  paperContainer: {
-    width: "100%",
-    marginTop: theme.spacing.unit * 3
-  },
-  root: {
-    marginTop: theme.spacing.unit * 3
-  }
-});
+import styles from './statistic.css';
 
 // Currently hard coded data
-
 class Statistics extends React.Component {
   constructor(props) {
     super(props);
@@ -110,12 +95,11 @@ class Statistics extends React.Component {
         });
     };
 
-    const { classes } = this.props;
     return (
-      <div className={classes.parentDiv}>
-        <div className={classes.paperContainer}>
-          <Paper className={classes.root}>
-            <Table className={classes.table}>
+      <div className={styles.parentDiv}>
+        <div className={styles.paperContainer}>
+          <Paper className={styles.root}>
+            <Table className={styles.table}>
               <TableHead>
                 <TableRow>
                   <TableCell>Player</TableCell>
@@ -127,8 +111,8 @@ class Statistics extends React.Component {
             </Table>
           </Paper>
 
-          <Paper className={classes.root}>
-            <Table className={classes.table}>
+          <Paper className={styles.root}>
+            <Table className={styles.table}>
               <TableHead>
                 <TableRow>
                   <TableCell>Player</TableCell>
@@ -148,9 +132,5 @@ class Statistics extends React.Component {
     return <div>{this.renderStatistics()}</div>;
   }
 }
-
-Statistics.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
 export default withStyles(styles)(Statistics);

@@ -1,0 +1,17 @@
+.parentDiv {
+  width: 50%;
+  display: inline-flex;
+}
+
+@media screen and (max-width: 700px) {
+  .parentDiv {
+    width: inherit;
+  }
+}
+.paperContainer {
+  width: 100%;
+}
+
+.root {
+  margin-top: 5%
+}
