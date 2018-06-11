@@ -5,4 +5,6 @@ Please add your name to this list along with your Discord name
 
 -[Alvin](https://github.com/skylar01) - Discord: Skylar #5219
 
+-[Rudra Kishore](https://github.com/ursrudra) - Discord: Rudra Kishore
+
 -[Kene](https://github.com/kudeh) - Discord: kudeh
