@@ -35,9 +35,7 @@ const styles = theme => ({
   },
 });
 
-let id = 0;
 function createData(teams, throphies, participations, wins, loses) {
-  id += 1;
   return { teams, throphies, participations, wins, loses};
 }
 
@@ -92,48 +90,3 @@ CustomizedTable.propTypes = {
 };
 
 export default withStyles(styles)(CustomizedTable);
-
-
-
-// import React, {Component} from 'react';
-
-// class TeamDetails extends Component {
-//   constructor(props) {
-//     super(props);
-//       this.state = [
-//         {
-//           country: 'brazil',
-//           worldCupsWon: 5,
-//           participations: 19
-//         },
-//         {
-//           country: 'germany',
-//           worldCupsWon: 4,
-//           participations: 17
-//         }
-//       ]
-//     }
-
-//   render() {
-//     const styles = {
-//       color: 'white'
-//     }
-
-//     const teams = this.state.map(team => (
-//       <div>
-//         <ul>
-//           <li><p>{team.country}</p></li>
-//           <li>{team.worldCupsWon}</li>
-//           <li>{team.participations}</li>
-//         </ul>
-//       </div>
-//     ));
-//     return (
-//       <div style={styles}>
-//         { teams }
-//       </div>
-//     )
-//   }
-// }
-
-// export default TeamDetails;
