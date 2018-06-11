@@ -57,7 +57,6 @@ class Statistics extends React.Component {
   }
 
   renderStatistics() {
-
     return (
       <div className={styles.parentDiv}>
         <div className={styles.paperContainer}>
@@ -75,7 +74,17 @@ class Statistics extends React.Component {
   }
 
   render() {
-    return <div>{this.renderStatistics()}</div>;
+    const linkStyles = {
+      color: 'white',
+      textDecoration: 'none',
+      fontSize: '20px'
+    };
+    return (
+      <div>
+        <h2><a style={linkStyles} href="/teams/statistics">Check out the teams statistics</a></h2>
+        {this.renderStatistics()}
+      </div>
+    )
   }
 }
 
