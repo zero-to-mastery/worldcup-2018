@@ -1,11 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import StatisticTable from './StatisticTable/StatisticTable';
 import styles from './statistic.css';
 
 // Currently hard coded data
@@ -24,7 +20,7 @@ class Statistics extends React.Component {
         {
           id: 2,
           name: "Neymar",
-          goals: 5,
+          goals: 8,
           team: "Brazil"
         },
 
@@ -39,21 +35,21 @@ class Statistics extends React.Component {
         {
           id: 1,
           name: "Ronaldo",
-          assits: 3,
+          assists: 3,
           team: "Portugal"
         },
 
         {
           id: 2,
           name: "Muller",
-          assits: 2,
+          assists: 2,
           team: "Germany"
         },
 
         {
           id: 3,
           name: "Isco",
-          assits: 4,
+          assists: 4,
           team: "Spain"
         }
       ]
@@ -61,75 +57,34 @@ class Statistics extends React.Component {
   }
 
   renderStatistics() {
-    const sortTopScorrer = arr => {
-      return []
-        .concat(arr)
-        .sort((a, b) => a.goals < b.goals)
-        .map(player => {
-          return (
-            <TableRow key={player.id}>
-              <TableCell component="th" scope="row">
-                {player.name}
-              </TableCell>
-              <TableCell numeric>{player.goals}</TableCell>
-              <TableCell>{player.team}</TableCell>
-            </TableRow>
-          );
-        });
-    };
-
-    const sortTopAssits = arr => {
-      return []
-        .concat(arr)
-        .sort((a, b) => a.assits < b.assits)
-        .map(player => {
-          return (
-            <TableRow key={player.id}>
-              <TableCell component="th" scope="row">
-                {player.name}
-              </TableCell>
-              <TableCell numeric>{player.assits}</TableCell>
-              <TableCell>{player.team}</TableCell>
-            </TableRow>
-          );
-        });
-    };
-
     return (
       <div className={styles.parentDiv}>
         <div className={styles.paperContainer}>
           <Paper className={styles.root}>
-            <Table className={styles.table}>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Player</TableCell>
-                  <TableCell numeric>Goals</TableCell>
-                  <TableCell>Team</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>{sortTopScorrer(this.state.topScorers)}</TableBody>
-            </Table>
+            <StatisticTable title="Goals" data={this.state.topScorers} className={styles.table} />
           </Paper>
 
           <Paper className={styles.root}>
-            <Table className={styles.table}>
-              <TableHead>
-                <TableRow>
-                  <TableCell>Player</TableCell>
-                  <TableCell numeric>Assists</TableCell>
-                  <TableCell>Team</TableCell>
-                </TableRow>
-              </TableHead>
-              <TableBody>{sortTopAssits(this.state.topAssits)}</TableBody>
-            </Table>
+          <StatisticTable title="Assists" data={this.state.topAssits} className={styles.table}  />
           </Paper>
+
         </div>
       </div>
     );
   }
 
   render() {
-    return <div>{this.renderStatistics()}</div>;
+    const linkStyles = {
+      color: 'white',
+      textDecoration: 'none',
+      fontSize: '20px'
+    };
+    return (
+      <div>
+        <h2><a style={linkStyles} href="/teams/statistics">Check out the teams statistics</a></h2>
+        {this.renderStatistics()}
+      </div>
+    )
   }
 }
 

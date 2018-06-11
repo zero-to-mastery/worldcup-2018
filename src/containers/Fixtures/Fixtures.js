@@ -8,15 +8,15 @@ import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
 
 const styles = {
-  test: {
-    position: "fixed",
-    overflowY: "scroll",
-    top: 115,
-    bottom: 0
-  },makeScroll: {
-    border: "1px solid red",
-    height: "100%",
-    overflow: "scroll"
+  makeScroll: {
+    maxHeight: 515,
+    overflowY: 'scroll'
+  }, fixturesContainer: {
+    display: "flex",
+    flexDirection:  "column",
+    alignItems: "stretch",
+    justifyContent: "stretch",
+    margin: 0
   }
 }
 
@@ -35,10 +35,10 @@ class Fixtures extends React.Component {
     fetch(
       "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
     )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ groups: data.groups, teams: data.teams });
-      });
+    .then(res => res.json())
+    .then(data => {
+      this.setState({ groups: data.groups, teams: data.teams });
+    });
   }
 
   handleTabChange = (event, tabSelector) => {
@@ -55,24 +55,24 @@ class Fixtures extends React.Component {
     }
 
     let props = {
-groupnames:groupnames,
-teams:teams
-}
+      groupnames:groupnames,
+      teams:teams
+    }
 
     return (
-           <div>
-             <AppBar  position="static">
-               <Tabs value={tabSelector} onChange={this.handleTabChange}>
-                 <Tab label="GROUP STAGE" />
-                 <Tab label="KNOCKOUT STAGE" />
-               </Tabs>
-               </AppBar>
-               <div className={classes.test}>
-               {tabSelector === 0 && <GroupFixtures {...props} />}
-               {tabSelector === 1 && <KnockoutFixtures />}
-              </div>
-          </div>
-     );
+      <div className={classes.fixturesContainer}>
+        <AppBar  position="static">
+          <Tabs value={tabSelector} onChange={this.handleTabChange}>
+            <Tab label="GROUP STAGE" />
+            <Tab label="KNOCKOUT STAGE" />
+          </Tabs>
+        </AppBar>
+        <div className={classes.makeScroll}>
+          {tabSelector === 0 && <GroupFixtures {...props} />}
+          {tabSelector === 1 && <KnockoutFixtures />}
+        </div>
+      </div>
+    );
   }
 
   render() {
