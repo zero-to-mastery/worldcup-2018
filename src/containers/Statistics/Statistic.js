@@ -74,14 +74,16 @@ class Statistics extends React.Component {
   }
 
   render() {
+    const { history } = this.props;
     const linkStyles = {
       color: 'white',
       textDecoration: 'none',
-      fontSize: '20px'
+      fontSize: '20px',
+      cursor: 'pointer'
     };
     return (
       <div>
-        <h2><a style={linkStyles} href="/teams/statistics">Check out the teams statistics</a></h2>
+         <h2><a style={linkStyles} onClick={() => history.push("/teams/statistics")}>Check out the teams statistics</a></h2>
         {this.renderStatistics()}
       </div>
     )
