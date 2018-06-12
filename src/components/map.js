@@ -8,7 +8,7 @@ export default class Map extends Component {
   markerClickHandler(id, e) {
     this.props.currentStadiumChangeHandler(id);
   }
-  renderStadiums() {
+  renderStadiums = () => {
     return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
       <StadiumMarker
         key={id}
