@@ -6,11 +6,17 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
+import 'typeface-roboto';
 
 const styles = {
   makeScroll: {
     maxHeight: 515,
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    justifyItems: "center",
+    padding: 20,
+    fontFamily: "Roboto"
   }, fixturesContainer: {
     display: "flex",
     flexDirection:  "column",
@@ -27,6 +33,7 @@ class Fixtures extends React.Component {
       groups: {},
       teams: [],
       statiums: [],
+      matches: [],
       tabSelector: 0
     };
   }
@@ -37,7 +44,7 @@ class Fixtures extends React.Component {
     )
     .then(res => res.json())
     .then(data => {
-      this.setState({ groups: data.groups, teams: data.teams });
+      this.setState({ groups: data.groups, teams: data.teams, stadiums: data.stadiums });
     });
   }
 
@@ -46,17 +53,20 @@ class Fixtures extends React.Component {
   }
 
   renderFixtures() {
-    const { groups, teams, tabSelector } = this.state;
+    const { groups, teams, stadiums, tabSelector } = this.state;
     const { classes } = this.props;
-    const groupnames = [];
+    let matches = [];
 
     for (let value of Object.values(groups)) {
-      groupnames.push({ groupname: value.name, matches: value.matches });
+      let groupName = value.name;
+      value.matches.map((match) => match.groupName = groupName);
+      matches = matches.concat(value.matches);
     }
 
     let props = {
-      groupnames:groupnames,
-      teams:teams
+      matches: matches,
+      teams:teams,
+      stadiums: stadiums
     }
 
     return (
