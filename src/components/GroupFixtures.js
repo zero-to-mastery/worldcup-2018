@@ -16,7 +16,8 @@ const styles = {
     margin: 5,
     padding: 3,
     borderRadius: 5,
-    backgroundColor: "#FAFAFA"
+    backgroundColor: "#FAFAFA",
+    border: "5px solid silver"
   },
   upperCard: {
     display: "flex",
@@ -54,7 +55,8 @@ const styles = {
     justifySelf: "start"
   },
   datetime: {
-    borderLeft: "1px solid grey",
+    borderLeft: "1px solid silver",
+    color: "silver",
     padding: 5
   }
 };
@@ -86,7 +88,7 @@ const GroupFixtures = ({matches, teams, stadiums, classes}) => {
               alt=""
             />
             <Typography className={classes.teamName}>{homeTeam[0].name}</Typography>
-            <Typography>{"-"}</Typography>
+            <Typography>{ homeTeam[0].home_result ? homeTeam[0].home_result : "-"}</Typography>
           </div>
           <div className={classes.team}>
             <img
@@ -95,7 +97,7 @@ const GroupFixtures = ({matches, teams, stadiums, classes}) => {
               alt=""
             />
             <Typography className={classes.teamName}>{awayTeam[0].name}</Typography>
-            <Typography>{"-"}</Typography>
+            <Typography>{awayTeam[0].away_result ? awayTeam[0].away_result : "-"}</Typography>
           </div>
         </div>
         <div className={classes.datetime}>
@@ -119,75 +121,6 @@ const GroupFixtures = ({matches, teams, stadiums, classes}) => {
   });
 
 }
-
-
-
-  /*groupnames.map((groupname, i) => (
-  <Card key={i} className={classes.card}>
-  <CardContent className={classes.cardContent}>
-  <Typography
-  className={classes.typographyH2}
-  gutterBottom
-  variant="headline"
-  component="h2"
-  >
-  {groupname.groupname}
-</Typography>
-<Grid container spacing={8} className={classes.matchListCard}>
-{groupname.matches.map((match, key) => {
-let home_team = teams.filter(team => team.id === match.home_team);
-let away_team = teams.filter(team => team.id === match.away_team);
-let matchDate = new Date(match.date);
-
-return (
-<Grid item xs={12} key={key} className={classes.fixtureCard}>
-<Grid container spacing={8}>
-<Grid item xs={8} className={classes.fixtureTeams}>
-<div className={classes.team}>
-<img
-className={classes.flag}
-src={home_team[0].flag}
-alt=""
-/>
-<Typography className={classes.teamName}>
-{home_team[0].name}
-</Typography>
-</div>
-<div className={classes.team}>
-<img
-className={classes.flag}
-src={away_team[0].flag}
-alt=""
-/>
-<Typography className={classes.teamName}>
-{away_team[0].name}
-</Typography>
-</div>
-</Grid>
-<Grid item xs={4} className={classes.datetime}>
-<Typography>
-{matchDate.getDate() +
-"/" +
-(matchDate.getMonth() + 1) +
-"/" +
-matchDate.getFullYear()}
-</Typography>
-<Typography>
-{matchDate.getHours() +
-":" +
-matchDate.getMinutes() +
-"0"}
-</Typography>
-</Grid>
-</Grid>
-</Grid>
-);
-})}
-</Grid>
-</CardContent>
-</Card>
-))
-}*/
 
 GroupFixtures.propTypes = {
   classes: PropTypes.object.isRequired

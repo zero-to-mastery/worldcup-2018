@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
+import 'typeface-roboto';
 
 const styles = {
   makeScroll: {
@@ -13,7 +14,9 @@ const styles = {
     overflowY: 'scroll',
     display: "grid",
     gridTemplateColumns: "1fr 1fr 1fr",
-    justifyItems: "center"
+    justifyItems: "center",
+    padding: 20,
+    fontFamily: "Roboto"
   }, fixturesContainer: {
     display: "flex",
     flexDirection:  "column",
@@ -30,6 +33,7 @@ class Fixtures extends React.Component {
       groups: {},
       teams: [],
       statiums: [],
+      matches: [],
       tabSelector: 0
     };
   }
