@@ -1,6 +1,10 @@
 .parentDiv {
-  width: 50%;
-  display: inline-flex;
+  width: auto;
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 400px;
 }
 
 @media screen and (max-width: 700px) {
@@ -9,9 +13,9 @@
   }
 }
 .paperContainer {
-  width: 100%;
+  width: 75%;
 }
 
 .root {
-  margin-top: 5%
+  margin-top: 5%;
 }

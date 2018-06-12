@@ -6,6 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
+import fixtureStyles from "./Fixtures.css";
 import 'typeface-roboto';
 
 const styles = {
@@ -77,7 +78,7 @@ class Fixtures extends React.Component {
             <Tab label="KNOCKOUT STAGE" />
           </Tabs>
         </AppBar>
-        <div className={classes.makeScroll}>
+        <div className={fixtureStyles.displayGrid} >
           {tabSelector === 0 && <GroupFixtures {...props} />}
           {tabSelector === 1 && <KnockoutFixtures />}
         </div>
