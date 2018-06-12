@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Component } from "react";
 import Map from "../../components/map";
 import Stadium from "../../components/stadium-description-card";
 import { withRouter } from "react-router";
 
-class StadiumPage extends React.Component {
+class StadiumPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,7 +24,7 @@ class StadiumPage extends React.Component {
       });
   }
 
-  renderStadium() {
+  renderStadium = () => {
     if (this.state.currentStadium) {
       return (
         <Stadium
@@ -39,7 +39,7 @@ class StadiumPage extends React.Component {
     return null;
   }
 
-  currentStadiumChangeHandler(id) {
+  currentStadiumChangeHandler = (id) => {
     const index = this.state.stadiums.findIndex(element => element.id === id);
     this.setState({ currentStadium: this.state.stadiums[index] });
   }

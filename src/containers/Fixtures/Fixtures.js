@@ -6,17 +6,24 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
+import fixtureStyles from "./Fixtures.css";
+import 'typeface-roboto';
 
 const styles = {
-  test: {
-    position: "fixed",
-    overflowY: "scroll",
-    top: 115,
-    bottom: 0
-  },makeScroll: {
-    border: "1px solid red",
-    height: "100%",
-    overflow: "scroll"
+  makeScroll: {
+    maxHeight: 515,
+    overflowY: 'scroll',
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    justifyItems: "center",
+    padding: 20,
+    fontFamily: "Roboto"
+  }, fixturesContainer: {
+    display: "flex",
+    flexDirection:  "column",
+    alignItems: "stretch",
+    justifyContent: "stretch",
+    margin: 0
   }
 }
 
@@ -27,6 +34,7 @@ class Fixtures extends React.Component {
       groups: {},
       teams: [],
       statiums: [],
+      matches: [],
       tabSelector: 0
     };
   }
@@ -35,10 +43,10 @@ class Fixtures extends React.Component {
     fetch(
       "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
     )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({ groups: data.groups, teams: data.teams });
-      });
+    .then(res => res.json())
+    .then(data => {
+      this.setState({ groups: data.groups, teams: data.teams, stadiums: data.stadiums });
+    });
   }
 
   handleTabChange = (event, tabSelector) => {
@@ -46,33 +54,36 @@ class Fixtures extends React.Component {
   }
 
   renderFixtures() {
-    const { groups, teams, tabSelector } = this.state;
+    const { groups, teams, stadiums, tabSelector } = this.state;
     const { classes } = this.props;
-    const groupnames = [];
+    let matches = [];
 
     for (let value of Object.values(groups)) {
-      groupnames.push({ groupname: value.name, matches: value.matches });
+      let groupName = value.name;
+      value.matches.map((match) => match.groupName = groupName);
+      matches = matches.concat(value.matches);
     }
 
     let props = {
-groupnames:groupnames,
-teams:teams
-}
+      matches: matches,
+      teams:teams,
+      stadiums: stadiums
+    }
 
     return (
-           <div>
-             <AppBar  position="static">
-               <Tabs value={tabSelector} onChange={this.handleTabChange}>
-                 <Tab label="GROUP STAGE" />
-                 <Tab label="KNOCKOUT STAGE" />
-               </Tabs>
-               </AppBar>
-               <div className={classes.test}>
-               {tabSelector === 0 && <GroupFixtures {...props} />}
-               {tabSelector === 1 && <KnockoutFixtures />}
-              </div>
-          </div>
-     );
+      <div className={classes.fixturesContainer}>
+        <AppBar  position="static">
+          <Tabs value={tabSelector} onChange={this.handleTabChange}>
+            <Tab label="GROUP STAGE" />
+            <Tab label="KNOCKOUT STAGE" />
+          </Tabs>
+        </AppBar>
+        <div className={fixtureStyles.displayGrid} >
+          {tabSelector === 0 && <GroupFixtures {...props} />}
+          {tabSelector === 1 && <KnockoutFixtures />}
+        </div>
+      </div>
+    );
   }
 
   render() {

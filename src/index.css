@@ -2,14 +2,14 @@ body,
 html {
   height: 100%;
   margin: 0 auto;
-  text-align: center
+  text-align: center;
 }
 
 .scroll_wrapper {
-  position: fixed;
-  top: 100px;
-  bottom: 0;
-  overflow-y: scroll;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @font-face {
