@@ -9,7 +9,7 @@ class HomePage extends React.Component {
     teams: [],
     knockout: {}
   };
-  
+
   componentDidMount() {
     fetch(
       "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
@@ -85,7 +85,7 @@ class HomePage extends React.Component {
         });
       });
     }
-    
+
     return _.isEmpty(upcomingMatchGroup) ? null : upcomingMatchGroup;
   }
 
@@ -113,7 +113,7 @@ class HomePage extends React.Component {
     }
     return myTeam;
   }
-  
+
   /**
    * @param  {object} matchDetails
    * @returns {Date} next match date
@@ -137,17 +137,17 @@ class HomePage extends React.Component {
       }
       return null;
     });
-    return finalMatch    
+    return finalMatch
   }
 
   renderTeamDetails() {
     const { groups } = this.state;
     let matchDetails = this.getUpcomingMatchDetails(groups);
-    
+
     if (_.isEmpty(matchDetails)) {
       matchDetails = this.getFinalMatchDetails();
     }
-    
+
     const home_team = this.getTeam("home_team", matchDetails);
     const away_team = this.getTeam("away_team", matchDetails);
 
@@ -188,7 +188,7 @@ class HomePage extends React.Component {
     if (_.isEmpty(matchDetails)) {
       matchDetails = this.getFinalMatchDetails();
     }
-    
+
     return (
       <div>
         {!_.isEmpty(matchDetails) && matchDetails.type !== "winner" ? (
