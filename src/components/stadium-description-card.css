@@ -1,5 +1,6 @@
 .wrapper {
   width: 40%;
+  height: calc(100vh - 100px);
   background-color: white;
   float: left;
   border-radius: 2px;
