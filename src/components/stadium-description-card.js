@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./stadium-description-card.css";
+import styles from "../css_modules/stadium-description-card.css";
 
 export default function StadiumDescriptionCard({ name, image }) {
   return (
