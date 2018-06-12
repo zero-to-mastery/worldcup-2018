@@ -10,3 +10,5 @@ Please add your name to this list along with your Discord name
 -[Kene](https://github.com/kudeh) - Discord: kudeh
 
 -[Emerson](https://github.com/lupuselit) - Discord: lupuselit
+
+-[Sowmya](https://github.com/sowmyassrs) - Discord: Sowmya#1860
