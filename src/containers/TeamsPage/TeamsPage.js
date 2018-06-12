@@ -1,29 +1,51 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import indexStyle from "../../index.css";
+// const bgImage = ( imgName) => `linear-gradient( rgba(255,255,255,0.6),rgba(0,0,0,0.6)),url(https://github.com/ursrudra/FifaTeamImages/blob/master/img/${imgName}.jpg)`;
+const colors = {
+  Russia: "rgba(34,29,110,0.5)"
+}
+const bgImage = ( imgName) => `linear-gradient( ${colors.Russia},rgba(0,0,0,0.6)),url(https://robohash.org/${imgName}?size=200x200)`;
 
 const styles = {
   card: {
     width: 300,
     display: "inline-block",
-    margin: 40,
-    textAlign: "center"
-  },
+    margin: 30,
+    textAlign: "center",
+    position:"relative",
+    top:50,
+    filter: "blur(.5px)",
+    backgroundSize: "cover",
+    backgroundPositon:"100% 100%",
+    borderRadius: 10,
+    boxshadow: "1px 1px 25px 1px #999"
+
+
+    },
   media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
+    height: 100,
+    width:100,
+    borderRadius:50,
+    position: "relative",
+    top: -50,
+    left: 100,
+    opacity:1
+    // paddingTop: "56.25%" // 16:9
   },
   cardContent: {
     padding: 20
   },
   typographyH2: {
     fontSize: "2em",
-    fontWeight: 900
+    fontWeight: 900,
+    color:"#FFF",
+    position:"relative",
+    top:-40
   }
 };
 
@@ -46,10 +68,11 @@ class Teams extends React.Component {
   }
 
   renderTeams() {
+
     const { classes } = this.props;
     const { teams } = this.state;
     return teams.map((team, i) => (
-      <Card id="card" key={i} className={classes.card}>
+      <div id="card" key={i} className={classes.card}  style={{"background": bgImage(i)}}>
         <CardMedia className={classes.media} image={team.flag} />
         <CardContent className={classes.cardContent}>
           <Typography
@@ -61,7 +84,8 @@ class Teams extends React.Component {
             {team.name}
           </Typography>
         </CardContent>
-      </Card>
+      </div>
+
     ));
   }
 
