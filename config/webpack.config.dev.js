@@ -1,6 +1,5 @@
 "use strict";
 
-const autoprefixer = require("autoprefixer");
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -11,6 +10,7 @@ const eslintFormatter = require("react-dev-utils/eslintFormatter");
 const ModuleScopePlugin = require("react-dev-utils/ModuleScopePlugin");
 const getClientEnvironment = require("./env");
 const paths = require("./paths");
+const { cssConfig, cssModuleConfig } = require("./style");
 
 const publicPath = "/";
 const publicUrl = "";
@@ -77,67 +77,13 @@ module.exports = {
             }
           },
           {
-            test: path.resolve(paths.appComponents, "sweet-alert.css"),
-            use: [
-              require.resolve("style-loader"),
-              {
-                loader: require.resolve("css-loader"),
-                options: {
-                  importLoaders: 1
-                }
-              },
-              {
-                loader: require.resolve("postcss-loader"),
-                options: {
-                  ident: "postcss",
-                  plugins: () => [
-                    require("postcss-flexbugs-fixes"),
-                    autoprefixer({
-                      browsers: [
-                        ">1%",
-                        "last 4 versions",
-                        "Firefox ESR",
-                        "not ie < 9" // React doesn't support IE8 anyway
-                      ],
-                      flexbox: "no-2009"
-                    })
-                  ]
-                }
-              }
-            ]
+            test: paths.appCSSModules,
+            use: cssModuleConfig
           },
           {
             test: /\.css$/,
-            exclude: path.resolve(paths.appComponents, "sweet-alert.css"),
-            use: [
-              require.resolve("style-loader"),
-              {
-                loader: require.resolve("css-loader"),
-                options: {
-                  importLoaders: 1,
-                  modules: true,
-                  localIdentName: "[name]__[local]___[hash:base64:5]"
-                }
-              },
-              {
-                loader: require.resolve("postcss-loader"),
-                options: {
-                  ident: "postcss",
-                  plugins: () => [
-                    require("postcss-flexbugs-fixes"),
-                    autoprefixer({
-                      browsers: [
-                        ">1%",
-                        "last 4 versions",
-                        "Firefox ESR",
-                        "not ie < 9" // React doesn't support IE8 anyway
-                      ],
-                      flexbox: "no-2009"
-                    })
-                  ]
-                }
-              }
-            ]
+            exclude: paths.appCSSModules,
+            use: cssConfig
           },
           {
             exclude: [/\.(js|jsx|mjs)$/, /\.html$/, /\.json$/],
