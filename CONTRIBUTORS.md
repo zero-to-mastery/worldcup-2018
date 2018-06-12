@@ -12,3 +12,5 @@ Please add your name to this list along with your Discord name
 -[Emerson](https://github.com/lupuselit) - Discord: lupuselit
 
 -[Sowmya](https://github.com/sowmyassrs) - Discord: Sowmya#1860
+
++[Manvi-Agrawal](https://github.com/Manvi-Agrawal) - Discord: Manvi
