@@ -37,7 +37,7 @@ class Fixtures extends React.Component {
     )
     .then(res => res.json())
     .then(data => {
-      this.setState({ groups: data.groups, teams: data.teams });
+      this.setState({ groups: data.groups, teams: data.teams, stadiums: data.stadiums });
     });
   }
 
@@ -46,17 +46,20 @@ class Fixtures extends React.Component {
   }
 
   renderFixtures() {
-    const { groups, teams, tabSelector } = this.state;
+    const { groups, teams, stadiums, tabSelector } = this.state;
     const { classes } = this.props;
-    const groupnames = [];
+    let matches = [];
 
     for (let value of Object.values(groups)) {
-      groupnames.push({ groupname: value.name, matches: value.matches });
+      let groupName = value.name;
+      value.matches.map((match) => match.groupName = groupName);
+      matches = matches.concat(value.matches);
     }
 
     let props = {
-      groupnames:groupnames,
-      teams:teams
+      matches: matches,
+      teams:teams,
+      stadiums: stadiums
     }
 
     return (
