@@ -7,7 +7,56 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 const styles = {
-
+  matchCard: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    flexWrap: "wrap",
+    width: 300,
+    margin: 5,
+    padding: 3,
+    borderRadius: 5,
+    backgroundColor: "#FAFAFA"
+  },
+  upperCard: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center",
+    color: "#7B7B7B"
+  },upperCardPadding: {
+    paddingRight: 10,
+    color: "#7B7B7B",
+    fontWeight: "bold"
+  },
+  lowerCard: {
+    display: "grid",
+    gridTemplateRows: "1fr",
+    gridTemplateColumns: "4fr 1fr"
+  },
+  fixtureTeams: {
+    display: "grid",
+    gridTemplateRows: "1fr 1fr",
+    gridTemplateColumns: "1fr"
+  },team: {
+    display: "grid",
+    gridTemplateRows: "1fr",
+    gridTemplateColumns: "2fr 4fr 1fr"
+  },
+  flag: {
+    height: 15,
+    width: 30,
+    border: "2px solid silver",
+    borderRadius: 10,
+    marginRight: 10
+  },
+  teamName: {
+    justifySelf: "start"
+  },
+  datetime: {
+    borderLeft: "1px solid grey",
+    padding: 5
+  }
 };
 
 const GroupFixtures = ({matches, teams, stadiums, classes}) => {
@@ -24,26 +73,46 @@ const GroupFixtures = ({matches, teams, stadiums, classes}) => {
     return (
     <Card key={i} className={classes.matchCard}>
       <div className={classes.upperCard}>
-        <Typography>{match.groupName}</Typography>
-        <Typography>{"."}</Typography>
-        <Typography>{stadium[0].name}</Typography>
+        <Typography className={classes.upperCardPadding}>{match.groupName}</Typography>
+        <Typography style={{ fontWeight: "bold"}}className={classes.upperCardPadding}>{"."}</Typography>
+        <Typography className={classes.upperCardPadding}>{stadium[0].name}</Typography>
       </div>
       <div className={classes.lowerCard}>
-        <Typography>{homeTeam[0].name}</Typography>
-        <Typography>{awayTeam[0].name}</Typography>
-        <Typography>
-        {matchDate.getDate() +
-        "/" +
-        (matchDate.getMonth() + 1) +
-        "/" +
-        matchDate.getFullYear()}
-        </Typography>
-        <Typography>
-        {matchDate.getHours() +
-        ":" +
-        matchDate.getMinutes() +
-        "0"}
-        </Typography>
+        <div className={classes.fixtureTeams}>
+          <div className={classes.team}>
+            <img
+              className={classes.flag}
+              src={homeTeam[0].flag}
+              alt=""
+            />
+            <Typography className={classes.teamName}>{homeTeam[0].name}</Typography>
+            <Typography>{"-"}</Typography>
+          </div>
+          <div className={classes.team}>
+            <img
+              className={classes.flag}
+              src={awayTeam[0].flag}
+              alt=""
+            />
+            <Typography className={classes.teamName}>{awayTeam[0].name}</Typography>
+            <Typography>{"-"}</Typography>
+          </div>
+        </div>
+        <div className={classes.datetime}>
+          <Typography>
+          {matchDate.getDate() +
+          "/" +
+          (matchDate.getMonth() + 1) +
+          "/" +
+          matchDate.getFullYear()}
+          </Typography>
+          <Typography>
+          {matchDate.getHours() +
+          ":" +
+          matchDate.getMinutes() +
+          "0"}
+          </Typography>
+        </div>
       </div>
     </Card>
     )

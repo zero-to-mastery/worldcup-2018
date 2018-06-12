@@ -10,7 +10,10 @@ import KnockoutFixtures from "../../components/KnockoutFixtures";
 const styles = {
   makeScroll: {
     maxHeight: 515,
-    overflowY: 'scroll'
+    overflowY: 'scroll',
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    justifyItems: "center"
   }, fixturesContainer: {
     display: "flex",
     flexDirection:  "column",
