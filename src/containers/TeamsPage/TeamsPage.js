@@ -23,7 +23,7 @@ const colors = [
   {id: 15, color:'rgba(23,23,150,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/cvxri3anivazjm7ukeex.jpg' },
   {id: 16, color:'rgba(0,135,81,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/wbnqdre6xchz62xwcgp6.jpg' },
   {id: 17, color:'rgba(254,223,0,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/apzbapzlyerna0wn0bcs.jpg' },
-  {id: 18, color:'rgba(213,43,30,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/apzbapzlyerna0wn0bcs.jpg' },
+  {id: 18, color:'rgba(213,43,30,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/jukqrluzatbvdhif4doq.jpg' },
   {id: 19, color:'rgba(0,43,127,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/csl6sqnnjmtqf4khkha1.jpg' },
   {id: 20, color:'rgba(12,64,118,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/yk1jxwv03havxcmyksnz.jpg' },
   {id: 21, color:'rgba(221,0,0,0.6)' , teamimage:'https://img.fifa.com/image/upload/t_l5/zoylmyv6g7nxfzv5kw42.jpg' },
