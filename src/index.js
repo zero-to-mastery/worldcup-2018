@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./css_modules/common.css";
 import AppRoutes from "./routes";
 import registerServiceWorker from "./registerServiceWorker";
 

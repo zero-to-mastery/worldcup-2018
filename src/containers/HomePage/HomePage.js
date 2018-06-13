@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React from "react";
 import { withRouter } from "react-router";
-import styles from "./homepage.css";
+import styles from "../../css_modules/homepage.css";
 
 class HomePage extends React.Component {
   state = {
@@ -137,7 +137,7 @@ class HomePage extends React.Component {
       }
       return null;
     });
-    return finalMatch
+    return finalMatch;
   }
 
   renderTeamDetails() {
@@ -154,11 +154,7 @@ class HomePage extends React.Component {
     return (
       <div className={styles.team_details}>
         <div className={styles.homepage_flag}>
-          <img
-            className={styles.flag_img_sm}
-            src={home_team[0].flag}
-            alt=""
-          />
+          <img className={styles.flag_img_sm} src={home_team[0].flag} alt="" />
         </div>
         <div className={styles.title}>
           <span>{home_team[0].name} </span>
@@ -170,14 +166,10 @@ class HomePage extends React.Component {
           <span> {away_team[0].name} </span>
         </div>
         <div className={styles.homepage_flag}>
-          <img
-            className={styles.flag_img_sm}
-            src={away_team[0].flag}
-            alt=""
-          />
+          <img className={styles.flag_img_sm} src={away_team[0].flag} alt="" />
         </div>
       </div>
-    )
+    );
   }
 
   render() {

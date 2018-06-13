@@ -23,7 +23,8 @@ const styles = {
     flexWrap: "wrap",
     justifyContent: "center",
     color: "#7B7B7B"
-  },upperCardPadding: {
+  },
+  upperCardPadding: {
     paddingRight: 3,
     color: "#7B7B7B",
     fontWeight: "bold"
@@ -37,7 +38,8 @@ const styles = {
     display: "grid",
     gridTemplateRows: "1fr 1fr",
     gridTemplateColumns: "1fr"
-  },team: {
+  },
+  team: {
     display: "grid",
     gridTemplateRows: "1fr",
     gridTemplateColumns: "2fr 4fr 1fr"
@@ -59,68 +61,80 @@ const styles = {
   }
 };
 
-const GroupFixtures = ({matches, teams, stadiums, classes}) => {
-
-  matches = matches.sort((a, b) => {return new Date(a.date) - new Date(b.date)});
+const GroupFixtures = ({ matches, teams, stadiums, classes }) => {
+  matches = matches.sort((a, b) => {
+    return new Date(a.date) - new Date(b.date);
+  });
 
   return matches.map((match, i) => {
-
     let homeTeam = teams.filter(team => team.id === match.home_team);
     let awayTeam = teams.filter(team => team.id === match.away_team);
     let matchDate = new Date(match.date);
-    let stadium = stadiums.filter(stadium => (stadium.id === match.stadium));
+    let stadium = stadiums.filter(stadium => stadium.id === match.stadium);
 
     return (
-    <Card key={i} className={classes.matchCard}>
-      <div className={classes.upperCard}>
-        <Typography className={classes.upperCardPadding}>{"Matchday " + match.matchday}</Typography>
-        <Typography style={{ fontWeight: "bold"}}className={classes.upperCardPadding}>{"."}</Typography>
-        <Typography className={classes.upperCardPadding}>{match.groupName}</Typography>
-        <Typography style={{ fontWeight: "bold"}}className={classes.upperCardPadding}>{"."}</Typography>
-        <Typography className={classes.upperCardPadding}>{stadium[0].name}</Typography>
-      </div>
-      <div className={classes.lowerCard}>
-        <div className={classes.fixtureTeams}>
-          <div className={classes.team}>
-            <img
-              className={classes.flag}
-              src={homeTeam[0].flag}
-              alt=""
-            />
-            <Typography className={classes.teamName}>{homeTeam[0].name}</Typography>
-            <Typography>{ homeTeam[0].home_result ? homeTeam[0].home_result : "-"}</Typography>
-          </div>
-          <div className={classes.team}>
-            <img
-              className={classes.flag}
-              src={awayTeam[0].flag}
-              alt=""
-            />
-            <Typography className={classes.teamName}>{awayTeam[0].name}</Typography>
-            <Typography>{awayTeam[0].away_result ? awayTeam[0].away_result : "-"}</Typography>
-          </div>
-        </div>
-        <div className={classes.datetime}>
-          <Typography>
-          {matchDate.getDate() +
-          "/" +
-          (matchDate.getMonth() + 1) +
-          "/" +
-          matchDate.getFullYear()}
+      <Card key={i} className={classes.matchCard}>
+        <div className={classes.upperCard}>
+          <Typography className={classes.upperCardPadding}>
+            {"Matchday " + match.matchday}
           </Typography>
-          <Typography>
-          {matchDate.getHours() +
-          ":" +
-          matchDate.getMinutes() +
-          "0"}
+          <Typography
+            style={{ fontWeight: "bold" }}
+            className={classes.upperCardPadding}
+          >
+            {"."}
+          </Typography>
+          <Typography className={classes.upperCardPadding}>
+            {match.groupName}
+          </Typography>
+          <Typography
+            style={{ fontWeight: "bold" }}
+            className={classes.upperCardPadding}
+          >
+            {"."}
+          </Typography>
+          <Typography className={classes.upperCardPadding}>
+            {stadium[0].name}
           </Typography>
         </div>
-      </div>
-    </Card>
-    )
+        <div className={classes.lowerCard}>
+          <div className={classes.fixtureTeams}>
+            <div className={classes.team}>
+              <img className={classes.flag} src={homeTeam[0].flag} alt="" />
+              <Typography className={classes.teamName}>
+                {homeTeam[0].name}
+              </Typography>
+              <Typography>
+                {homeTeam[0].home_result ? homeTeam[0].home_result : "-"}
+              </Typography>
+            </div>
+            <div className={classes.team}>
+              <img className={classes.flag} src={awayTeam[0].flag} alt="" />
+              <Typography className={classes.teamName}>
+                {awayTeam[0].name}
+              </Typography>
+              <Typography>
+                {awayTeam[0].away_result ? awayTeam[0].away_result : "-"}
+              </Typography>
+            </div>
+          </div>
+          <div className={classes.datetime}>
+            <Typography>
+              {matchDate.getDate() +
+                "/" +
+                (matchDate.getMonth() + 1) +
+                "/" +
+                matchDate.getFullYear()}
+            </Typography>
+            <Typography>
+              {matchDate.getHours() + ":" + matchDate.getMinutes() + "0"}
+            </Typography>
+          </div>
+        </div>
+      </Card>
+    );
   });
-
-}
+};
 
 GroupFixtures.propTypes = {
   classes: PropTypes.object.isRequired

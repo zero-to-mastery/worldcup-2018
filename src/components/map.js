@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import GoogleMap from "google-map-react";
 import StadiumMarker from "./stadium-marker";
-import styles from "./map.css";
+import styles from "../css_modules/map.css";
 
 export default class Map extends Component {
   markerClickHandler(id, e) {
@@ -20,7 +20,7 @@ export default class Map extends Component {
         clickHandler={e => this.markerClickHandler(id, e)}
       />
     ));
-  }
+  };
   render() {
     const moscowGPS = {
       lat: 55.7496,

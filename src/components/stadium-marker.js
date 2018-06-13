@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styles from "./stadium-marker.css";
+import styles from "../css_modules/stadium-marker.css";
 
 export default function StadiumMarker({ name, clickHandler }) {
   return (
