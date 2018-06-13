@@ -9,7 +9,17 @@ const styles = {
   round: {
     display: "flex",
     flexDirection: "column",
-    alignItems: "stretch"
+    alignItems: "stretch",
+    marginBottom: "25px"
+  },
+   roundTitle: {
+    color: "white",
+    fontSize: "2em",
+    fontWeight: "bold",
+    fontFamily: "Roboto",
+    backgroundColor: "silver",
+    width: "70%",
+    alignSelf: "center"
   },roundMatches: {
     display: "flex",
     flexDirection: "row",
