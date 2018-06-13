@@ -34,7 +34,7 @@ class Fixtures extends React.Component {
       groups: {},
       teams: [],
       statiums: [],
-      matches: [],
+      knockoutMatches: {},
       tabSelector: 0
     };
   }
@@ -45,7 +45,7 @@ class Fixtures extends React.Component {
     )
     .then(res => res.json())
     .then(data => {
-      this.setState({ groups: data.groups, teams: data.teams, stadiums: data.stadiums });
+      this.setState({ groups: data.groups, teams: data.teams, stadiums: data.stadiums, knockoutMatches: data.knockout });
     });
   }
 
@@ -54,9 +54,10 @@ class Fixtures extends React.Component {
   }
 
   renderFixtures() {
-    const { groups, teams, stadiums, tabSelector } = this.state;
+    const { groups, teams, stadiums, tabSelector, knockoutMatches } = this.state;
     const { classes } = this.props;
     let matches = [];
+    let knockouts = [];
 
     for (let value of Object.values(groups)) {
       let groupName = value.name;
@@ -64,11 +65,20 @@ class Fixtures extends React.Component {
       matches = matches.concat(value.matches);
     }
 
-    let props = {
+    for (let value of Object.values(knockoutMatches)) {
+      knockouts.push(value);
+    }
+
+    let groupProps = {
       matches: matches,
       teams:teams,
-      stadiums: stadiums
+      stadiums: stadiums,
     }
+
+    let knockoutProps = {
+      knockouts: knockouts,
+      stadiums: stadiums
+    };
 
     return (
       <div className={classes.fixturesContainer}>
@@ -78,10 +88,14 @@ class Fixtures extends React.Component {
             <Tab label="KNOCKOUT STAGE" />
           </Tabs>
         </AppBar>
+        <div>
         <div className={fixtureStyles.displayGrid} >
-          {tabSelector === 0 && <GroupFixtures {...props} />}
-          {tabSelector === 1 && <KnockoutFixtures />}
+          {tabSelector === 0 && <GroupFixtures {...groupProps} />}
         </div>
+        <div className={fixtureStyles.displayKnockout}>
+        {tabSelector === 1 && <KnockoutFixtures {...knockoutProps}/>}
+      </div>
+      </div>
       </div>
     );
   }
