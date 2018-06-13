@@ -8,7 +8,7 @@ export default class Map extends Component {
   markerClickHandler(id, e) {
     this.props.currentStadiumChangeHandler(id);
   }
-  renderStadiums() {
+  renderStadiums = () => {
     return this.props.stadiums.map(({ lat, lng, name, city, image, id }) => (
       <StadiumMarker
         key={id}
@@ -20,7 +20,7 @@ export default class Map extends Component {
         clickHandler={e => this.markerClickHandler(id, e)}
       />
     ));
-  }
+  };
   render() {
     const moscowGPS = {
       lat: 55.7496,

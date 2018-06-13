@@ -1,0 +1,31 @@
+.displayGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 20px;
+}
+
+.displayKnockout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 1025px) {
+  .displayGrid{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 412px) {
+  .displayGrid{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+   justify-self: flex-end;
+  }
+}

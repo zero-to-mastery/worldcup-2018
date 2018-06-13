@@ -1,52 +1,30 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import commonStyle from "../../css_modules/common.css";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import GroupFixtures from "../../components/GroupFixtures";
+import KnockoutFixtures from "../../components/KnockoutFixtures";
+import fixtureStyles from "./Fixtures.css";
+import "typeface-roboto";
 
 const styles = {
-  card: {
-    width: 300,
-    display: "inline-block",
-    margin: 40,
-    textAlign: "center"
+  makeScroll: {
+    maxHeight: 515,
+    overflowY: "scroll",
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr 1fr",
+    justifyItems: "center",
+    padding: 20,
+    fontFamily: "Roboto"
   },
-  media: {
-    height: 0,
-    paddingTop: "56.25%" // 16:9
-  },
-  cardContent: {
-    padding: 20
-  },
-  typographyH2: {
-    fontSize: "2em",
-    fontWeight: 900
-  },
-  typographyH5: {
-    fontSize: ".5em",
-    fontWeight: 500
-  },
-  fixtureCard: {
-    border: "1px solid grey",
-    margin: 5
-  },
-  team: {
+  fixturesContainer: {
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignItems: "center"
-  },
-  flag: {
-    height: 15,
-    width: 30,
-    border: "1px solid black",
-    marginRight: 10
-  },
-  datetime: {
-    borderLeft: "1px solid grey"
+    flexDirection: "column",
+    alignItems: "stretch",
+    justifyContent: "stretch",
+    margin: 0
   }
 };
 
@@ -55,7 +33,10 @@ class Fixtures extends React.Component {
     super(props);
     this.state = {
       groups: {},
-      teams: []
+      teams: [],
+      statiums: [],
+      knockoutMatches: {},
+      tabSelector: 0
     };
   }
 
@@ -65,87 +46,70 @@ class Fixtures extends React.Component {
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ groups: data.groups, teams: data.teams });
+        this.setState({
+          groups: data.groups,
+          teams: data.teams,
+          stadiums: data.stadiums,
+          knockoutMatches: data.knockout
+        });
       });
   }
 
+  handleTabChange = (event, tabSelector) => {
+    this.setState({ tabSelector });
+  };
+
   renderFixtures() {
-    const { groups, teams } = this.state;
+    const {
+      groups,
+      teams,
+      stadiums,
+      tabSelector,
+      knockoutMatches
+    } = this.state;
     const { classes } = this.props;
-    const groupnames = [];
+    let matches = [];
+    let knockouts = [];
 
     for (let value of Object.values(groups)) {
-      groupnames.push({ groupname: value.name, matches: value.matches });
+      let groupName = value.name;
+      value.matches.map(match => (match.groupName = groupName));
+      matches = matches.concat(value.matches);
     }
 
-    return groupnames.map((groupname, i) => (
-      <Card key={i} className={classes.card}>
-        <CardContent className={classes.cardContent}>
-          <Typography
-            className={classes.typographyH2}
-            gutterBottom
-            variant="headline"
-            component="h2"
-          >
-            {groupname.groupname}
-          </Typography>
-          <Grid container spacing={8} className={classes.matchListCard}>
-            {groupname.matches.map((match, key) => {
-              let home_team = teams.filter(team => team.id === match.home_team);
-              let away_team = teams.filter(team => team.id === match.away_team);
-              let matchDate = new Date(match.date);
+    for (let value of Object.values(knockoutMatches)) {
+      knockouts.push(value);
+    }
 
-              return (
-                /*<p key={key} id={key}>
-                  {home_team[0].name} - {away_team[0].name}
-                </p>*/
-                <Grid item xs={12} key={key} className={classes.fixtureCard}>
-                  <Grid container spacing={8}>
-                    <Grid item xs={8} className={classes.fixtureTeams}>
-                      <div className={classes.team}>
-                        <img
-                          className={classes.flag}
-                          src={home_team[0].flag}
-                          alt=""
-                        />
-                        <Typography className={classes.teamName}>
-                          {home_team[0].name}
-                        </Typography>
-                      </div>
-                      <div className={classes.team}>
-                        <img
-                          className={classes.flag}
-                          src={away_team[0].flag}
-                          alt=""
-                        />
-                        <Typography className={classes.teamName}>
-                          {away_team[0].name}
-                        </Typography>
-                      </div>
-                    </Grid>
-                    <Grid item xs={4} className={classes.datetime}>
-                      <Typography>
-                        {matchDate.getDate() +
-                          "/" +
-                          (matchDate.getMonth() + 1) +
-                          "/" +
-                          matchDate.getFullYear()}
-                      </Typography>
-                      <Typography>
-                        {matchDate.getHours() +
-                          ":" +
-                          matchDate.getMinutes() +
-                          "0"}
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </CardContent>
-      </Card>
-    ));
+    let groupProps = {
+      matches: matches,
+      teams: teams,
+      stadiums: stadiums
+    };
+
+    let knockoutProps = {
+      knockouts: knockouts,
+      stadiums: stadiums
+    };
+
+    return (
+      <div className={classes.fixturesContainer}>
+        <AppBar position="static">
+          <Tabs value={tabSelector} onChange={this.handleTabChange}>
+            <Tab label="GROUP STAGE" />
+            <Tab label="KNOCKOUT STAGE" />
+          </Tabs>
+        </AppBar>
+        <div>
+          <div className={fixtureStyles.displayGrid}>
+            {tabSelector === 0 && <GroupFixtures {...groupProps} />}
+          </div>
+          <div className={fixtureStyles.displayKnockout}>
+            {tabSelector === 1 && <KnockoutFixtures {...knockoutProps} />}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   render() {
