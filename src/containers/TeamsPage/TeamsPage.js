@@ -4,7 +4,6 @@ import { withStyles } from "@material-ui/core/styles";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import commonStyle from "../../css_modules/common.css";
 const colors = [
   {
     id: 1,
@@ -251,9 +250,7 @@ class Teams extends React.Component {
   }
 
   render() {
-    return (
-      <div className={commonStyle.scroll_wrapper}>{this.renderTeams()}</div>
-    );
+    return <div>{this.renderTeams()}</div>;
   }
 }
 

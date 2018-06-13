@@ -2,7 +2,7 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import StatisticTable from "./StatisticTable/StatisticTable";
-import styles from "./statistic.css";
+import styles from "../../css_modules/statistic.css";
 import { scorerData } from "./data/top_scorer";
 import { assistData } from "./data/top_assists";
 

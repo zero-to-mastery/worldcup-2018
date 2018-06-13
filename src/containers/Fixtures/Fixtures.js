@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import GroupFixtures from "../../components/GroupFixtures";
 import KnockoutFixtures from "../../components/KnockoutFixtures";
-import fixtureStyles from "./Fixtures.css";
+import fixtureStyles from "../../css_modules/fixtures.css";
 import "typeface-roboto";
 
 const styles = {
@@ -113,9 +113,7 @@ class Fixtures extends React.Component {
   }
 
   render() {
-    return (
-      <div className={commonStyle.scroll_wrapper}>{this.renderFixtures()}</div>
-    );
+    return <div>{this.renderFixtures()}</div>;
   }
 }
 
