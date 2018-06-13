@@ -88,7 +88,7 @@ module.exports = {
             }
           },
           {
-            test: /\.css$/,
+            test: paths.appCSSModules,
             loader: ExtractTextPlugin.extract(
               Object.assign(
                 {
@@ -106,6 +106,51 @@ module.exports = {
                         minimize: true,
                         modules: true,
                         localIdentName: "[name]__[local]___[hash:base64:5]",
+                        sourceMap: shouldUseSourceMap
+                      }
+                    },
+                    {
+                      loader: require.resolve("postcss-loader"),
+                      options: {
+                        ident: "postcss",
+                        plugins: () => [
+                          require("postcss-flexbugs-fixes"),
+                          autoprefixer({
+                            browsers: [
+                              ">1%",
+                              "last 4 versions",
+                              "Firefox ESR",
+                              "not ie < 9" // React doesn't support IE8 anyway
+                            ],
+                            flexbox: "no-2009"
+                          })
+                        ]
+                      }
+                    }
+                  ]
+                },
+                extractTextPluginOptions
+              )
+            )
+          },
+          {
+            test: /\.css$/,
+            exclude: paths.appCSSModules,
+            loader: ExtractTextPlugin.extract(
+              Object.assign(
+                {
+                  fallback: {
+                    loader: require.resolve("style-loader"),
+                    options: {
+                      hmr: false
+                    }
+                  },
+                  use: [
+                    {
+                      loader: require.resolve("css-loader"),
+                      options: {
+                        importLoaders: 1,
+                        minimize: true,
                         sourceMap: shouldUseSourceMap
                       }
                     },
