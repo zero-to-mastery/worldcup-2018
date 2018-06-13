@@ -20,7 +20,7 @@ export default class Map extends Component {
         clickHandler={e => this.markerClickHandler(id, e)}
       />
     ));
-  }
+  };
   render() {
     const moscowGPS = {
       lat: 55.7496,

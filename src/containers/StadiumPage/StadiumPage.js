@@ -37,12 +37,12 @@ class StadiumPage extends Component {
       );
     }
     return null;
-  }
+  };
 
-  currentStadiumChangeHandler = (id) => {
+  currentStadiumChangeHandler = id => {
     const index = this.state.stadiums.findIndex(element => element.id === id);
     this.setState({ currentStadium: this.state.stadiums[index] });
-  }
+  };
 
   render() {
     return (
