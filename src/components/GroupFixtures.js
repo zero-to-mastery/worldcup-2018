@@ -10,7 +10,7 @@ const styles = {
     flexDirection: "column",
     justifyContent: "flex-start",
     flexWrap: "wrap",
-    width: 300,
+    width: 315,
     margin: 5,
     padding: 3,
     borderRadius: 5,
@@ -24,7 +24,7 @@ const styles = {
     justifyContent: "center",
     color: "#7B7B7B"
   },upperCardPadding: {
-    paddingRight: 10,
+    paddingRight: 3,
     color: "#7B7B7B",
     fontWeight: "bold"
   },
@@ -73,6 +73,8 @@ const GroupFixtures = ({matches, teams, stadiums, classes}) => {
     return (
     <Card key={i} className={classes.matchCard}>
       <div className={classes.upperCard}>
+        <Typography className={classes.upperCardPadding}>{"Matchday " + match.matchday}</Typography>
+        <Typography style={{ fontWeight: "bold"}}className={classes.upperCardPadding}>{"."}</Typography>
         <Typography className={classes.upperCardPadding}>{match.groupName}</Typography>
         <Typography style={{ fontWeight: "bold"}}className={classes.upperCardPadding}>{"."}</Typography>
         <Typography className={classes.upperCardPadding}>{stadium[0].name}</Typography>
