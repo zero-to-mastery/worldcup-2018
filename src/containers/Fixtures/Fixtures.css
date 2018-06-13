@@ -5,6 +5,12 @@
   padding: 20px;
 }
 
+.displayKnockout {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 @media only screen and (max-width: 1025px) {
   .displayGrid{
    display: flex;

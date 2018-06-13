@@ -6,6 +6,16 @@ import Typography from "@material-ui/core/Typography";
 
 
 const styles = {
+  round: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "stretch"
+  },roundMatches: {
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "center"
+  },
   matchCard: {
     display: "flex",
     flexDirection: "column",
@@ -63,7 +73,7 @@ const styles = {
 const KnockoutFixtures = ({knockouts, classes, stadiums}) => {
   return knockouts.map((knockoutRound, i) => (
       <div className={classes.round} key={i}>
-        <Typography>{knockoutRound.name}</Typography>
+        <Typography className={classes.roundTitle}>{knockoutRound.name}</Typography>
         <div className={classes.roundMatches}>
         {knockoutRound.matches.map((match, j) => {
           //let homeTeam = teams.filter(team => team.id === match.home_team);
