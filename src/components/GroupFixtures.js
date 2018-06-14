@@ -105,7 +105,7 @@ const GroupFixtures = ({ matches, teams, stadiums, classes }) => {
                 {homeTeam[0].name}
               </Typography>
               <Typography>
-                {homeTeam[0].home_result ? homeTeam[0].home_result : "-"}
+                {match.home_result >= 0 ? match.home_result : "-"}
               </Typography>
             </div>
             <div className={classes.team}>
@@ -114,7 +114,7 @@ const GroupFixtures = ({ matches, teams, stadiums, classes }) => {
                 {awayTeam[0].name}
               </Typography>
               <Typography>
-                {awayTeam[0].away_result ? awayTeam[0].away_result : "-"}
+                {match.away_result >= 0 ? match.away_result : "-"}
               </Typography>
             </div>
           </div>
