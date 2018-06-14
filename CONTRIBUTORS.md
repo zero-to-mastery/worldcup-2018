@@ -14,3 +14,5 @@ Please add your name to this list along with your Discord name
 -[Sowmya](https://github.com/sowmyassrs) - Discord: Sowmya#1860
 
 +[Manvi-Agrawal](https://github.com/Manvi-Agrawal) - Discord: Manvi
+
+-[Eli](https://github.com/elir92) - Discord: Elijah #2635
