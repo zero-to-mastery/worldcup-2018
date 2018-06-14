@@ -6,6 +6,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
 const StatisticTable = ({ title, data, className }) => {
+
   const statisticParameter = title.toLowerCase();
 
   const sortData = (arr, parameter) => {
@@ -27,15 +28,15 @@ const StatisticTable = ({ title, data, className }) => {
 
   return (
     <Table className={className}>
-      <TableHead>
-        <TableRow>
-          <TableCell>Player</TableCell>
-          <TableCell numeric>{title}</TableCell>
-          <TableCell>Team</TableCell>
+      <TableHead >
+        <TableRow style={{ backgroundColor: "#a9a9a9" }}>
+          <TableCell style={{ color: "white" }}>Player</TableCell>
+          <TableCell style={{ color: "white" }} numeric>{title}</TableCell>
+          <TableCell style={{ color: "white" }}>Team</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>{sortData(data, statisticParameter)}</TableBody>
-    </Table>
+    </Table >
   );
 };
 
