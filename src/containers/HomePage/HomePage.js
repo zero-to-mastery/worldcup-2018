@@ -1,7 +1,7 @@
 import _ from "lodash";
 import React from "react";
 import { withRouter } from "react-router";
-import styles from "../../css_modules/homepage.css";
+import styles from "../../css_modules/home-page.css";
 
 class HomePage extends React.Component {
   state = {
