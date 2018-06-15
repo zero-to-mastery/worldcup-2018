@@ -16,8 +16,15 @@ export const assistData = [
       name: "Roman Zobnin",
       assists: 1,
       team: "Russia"
+  },
+  {
+      id: 4,
+      name: "Carlos Sanchez",
+      assists: 1,
+      team: "Uruguay"
   }
 ];
+
 
 // For Example
 //  {
