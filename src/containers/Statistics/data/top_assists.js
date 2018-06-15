@@ -22,6 +22,18 @@ export const assistData = [
     name: "Carlos Sanchez",
     assists: 1,
     team: "Uruguay"
+  },
+  {
+    id: 5,
+    name: "Goncalo Guedes",
+    assists: 1,
+    team: "Portugal"
+  },
+  {
+    id: 6,
+    name: "Sergio Busquets",
+    assists: 1,
+    team: "Spain"
   }
 ];
 
