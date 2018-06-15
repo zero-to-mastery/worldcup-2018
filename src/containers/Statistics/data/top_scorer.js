@@ -22,6 +22,12 @@ export const scorerData = [
       name: "Aleksandr Golovin",
       goals: 1,
       team: "Russia"
+  },
+  {
+      id: 5,
+      name: "Jose Gimenez",
+      goals: 1,
+      team: "Uruguay"
   }
 ];
 
