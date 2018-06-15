@@ -5,7 +5,7 @@ import StadiumMarker from "./stadium-marker";
 import styles from "../css_modules/map.css";
 
 export default class Map extends Component {
-  markerClickHandler(id, e) {
+  markerClickHandler(id) {
     this.props.currentStadiumChangeHandler(id);
   }
   renderStadiums = () => {
