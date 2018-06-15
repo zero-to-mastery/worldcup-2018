@@ -28,6 +28,24 @@ export const scorerData = [
     name: "Jose Gimenez",
     goals: 1,
     team: "Uruguay"
+  },
+  {
+    id: 6,
+    name: "Cristiano Ronaldo",
+    goals: 3,
+    team: "Portugal"
+  },
+  {
+    id: 7,
+    name: "Diego Costa",
+    goals: 2,
+    team: "Spain"
+  },
+  {
+    id: 8,
+    name: "Nacho Fernandez",
+    goals: 1,
+    team: "Spain"
   }
 ];
 
