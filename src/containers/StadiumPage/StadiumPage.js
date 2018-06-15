@@ -8,7 +8,8 @@ import "../../css/sweet-alert.css";
 
 const mapStateToProps = state => {
   return {
-    stadium: state.currentStadium
+    stadium: state.currentStadium,
+    stadiums: state.stadiums
   };
 };
 
@@ -22,13 +23,6 @@ const mapDispatchToProps = dispatch => {
 };
 
 class StadiumPage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      stadiums: []
-    };
-  }
-
   componentDidMount() {
     fetch(
       "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
