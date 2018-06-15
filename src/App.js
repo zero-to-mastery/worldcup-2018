@@ -2,15 +2,16 @@ import React from "react";
 import { withRouter } from "react-router";
 import AppBar from "./containers/AppBar/AppBar";
 import styles from "./css_modules/app.css";
-import { changeStadium } from "./reducers";
+import { changeStadium, requestData } from "./reducers";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, combineReducers } from "redux";
 import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
 
 const logger = createLogger();
+const rootReducer = combineReducers({ requestData, changeStadium });
 const store = createStore(
-  changeStadium,
+  rootReducer,
   applyMiddleware(thunkMiddleware, logger)
 );
 
