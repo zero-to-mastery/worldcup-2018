@@ -14,5 +14,5 @@ html {
 
 @font-face {
   font-family: 'Dusha';
-  src: url('./fonts/dusha.ttf') format('truetype');
+  src: url('../fonts/dusha.ttf') format('truetype');
 }

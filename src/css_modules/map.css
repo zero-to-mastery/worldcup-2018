@@ -1,0 +1,13 @@
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-color: white;
+  overflow: hidden;
+  min-height: 240px;
+}
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    height: calc(100vh - 80px);
+  }
+}
