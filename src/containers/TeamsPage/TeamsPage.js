@@ -179,7 +179,7 @@ const styles = {
     position: "relative",
     top: 50,
     filter: "blur(.5px)",
-    backgroundSize: "cover",
+    backgroundSize: "cover !important",
     backgroundPositon: "100% 100%",
     borderRadius: 10,
     boxshadow: "1px 1px 25px 1px #999"
