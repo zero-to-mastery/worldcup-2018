@@ -11,6 +11,7 @@ const bgImage = ( colorName, imgName) => `linear-gradient( ${colorName},rgba(0,0
 const styles = {
   card: {
     width: 300,
+    height:180,
     display: "inline-block",
     margin: 30,
     textAlign: "center",
@@ -47,7 +48,8 @@ const styles = {
     fontSize: "1em",
     fontWeight: 400,
     color:"#FFF",
-   
+   position:"relative",
+    top:-40
   }
 };
 
