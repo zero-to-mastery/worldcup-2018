@@ -1,0 +1,18 @@
+body,
+html {
+  height: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.scroll_wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@font-face {
+  font-family: 'Dusha';
+  src: url('./fonts/dusha.ttf') format('truetype');
+}
