@@ -15,23 +15,21 @@ const styles = {
     display: "inline-block",
     margin: 30,
     textAlign: "center",
-    position:"relative",
-    top:50,
+    position: "relative",
+    top: 50,
     filter: "blur(.5px)",
     backgroundSize: "cover",
     borderRadius: 10,
     boxshadow: "1px 1px 25px 1px #999"
-
-
-    },
+  },
   media: {
     height: 100,
-    width:100,
-    borderRadius:50,
+    width: 100,
+    borderRadius: 50,
     position: "relative",
     top: -50,
     left: 100,
-    opacity:1
+    opacity: 1
     // paddingTop: "56.25%" // 16:9
   },
   cardContent: {
@@ -49,8 +47,9 @@ const styles = {
     fontWeight: 400,
     color:"#FFF",
    position:"relative",
-    top:-40
-  }
+    top:-40,
+    color: "#FFF"
+   }
 };
 
 class Teams extends React.Component {
@@ -72,7 +71,6 @@ class Teams extends React.Component {
   }
 
   renderTeams() {
-
     const { classes } = this.props;
     const { teams } = this.state;
     return teams.map((team, i) => (
@@ -97,14 +95,11 @@ class Teams extends React.Component {
           </Typography>
         </CardContent>
       </div>
-
     ));
   }
 
   render() {
-    return (
-      <div className={indexStyle.scroll_wrapper}>{this.renderTeams()}</div>
-    );
+    return <div>{this.renderTeams()}</div>;
   }
 }
 
