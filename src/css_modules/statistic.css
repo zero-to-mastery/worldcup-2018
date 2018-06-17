@@ -1,20 +1,30 @@
 .parentDiv {
   width: auto;
+  margin-bottom: 40px;
   display: grid;
   grid-template-columns: auto;
   align-items: center;
   justify-items: center;
 }
 
+.paperContainer {
+  width: 70%;
+}
+
 @media screen and (max-width: 700px) {
   .parentDiv {
     width: inherit;
+    margin: 0px 20px;
+  }
+  .paperContainer {
+    width: 100%;
   }
 }
-.paperContainer {
-  width: 75%;
+
+thead tr {
+  background-color: black !important;
 }
 
 .root {
-  margin-top: 5%;
+  margin-top: 20px;
 }

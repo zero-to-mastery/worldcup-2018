@@ -7,6 +7,8 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import styles from '../../css_modules/team-details.css';
+
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -18,26 +20,8 @@ const CustomTableCell = withStyles(theme => ({
   }
 }))(TableCell);
 
-const styles = theme => ({
-  root: {
-    width: "60%",
-    marginTop: theme.spacing.unit * 3,
-    margin: "auto",
-    overflowX: "auto",
-    marginBottom: 350
-  },
-  table: {
-    minWidth: 700
-  },
-  row: {
-    "&:nth-of-type(odd)": {
-      backgroundColor: theme.palette.background.default
-    }
-  }
-});
-
-function createData(teams, throphies, participations, wins, loses) {
-  return { teams, throphies, participations, wins, loses };
+function createData(teams, trophies, participations, wins, loses) {
+  return { teams, trophies, participations, wins, loses };
 }
 
 const data = [
@@ -52,28 +36,28 @@ const data = [
 ];
 
 function CustomizedTable(props) {
-  const { classes } = props;
 
   return (
-    <Paper className={classes.root}>
-      <Table className={classes.table}>
+    <div className={styles.parentDiv}>
+    <Paper className={styles.root}>
+      <Table className={styles.table}>
         <TableHead>
           <TableRow>
             <CustomTableCell>Teams</CustomTableCell>
-            <CustomTableCell numeric>Throphies</CustomTableCell>
+            <CustomTableCell numeric>Trophies</CustomTableCell>
             <CustomTableCell numeric>Participations</CustomTableCell>
             <CustomTableCell numeric>Wins</CustomTableCell>
             <CustomTableCell numeric>Loses</CustomTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {data.map(n => {
+          {data.map((n,i) => {
             return (
-              <TableRow className={classes.row} key={n.id}>
+              <TableRow className={styles.row} key={i}>
                 <CustomTableCell component="th" scope="row">
                   {n.teams}
                 </CustomTableCell>
-                <CustomTableCell numeric>{n.throphies}</CustomTableCell>
+                <CustomTableCell numeric>{n.trophies}</CustomTableCell>
                 <CustomTableCell numeric>{n.participations}</CustomTableCell>
                 <CustomTableCell numeric>{n.wins}</CustomTableCell>
                 <CustomTableCell numeric>{n.loses}</CustomTableCell>
@@ -83,6 +67,7 @@ function CustomizedTable(props) {
         </TableBody>
       </Table>
     </Paper>
+    </div>
   );
 }
 

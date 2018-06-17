@@ -1,6 +1,8 @@
 #Contributors List
 Please add your name to this list along with your Discord name
 
+-[DJ](https://github.com/djohal) - Discord: DJ
+
 -[Matt](https://github.com/mattcsmith) - Discord: Matt
 
 -[Alvin](https://github.com/skylar01) - Discord: Skylar #5219
