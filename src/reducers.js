@@ -20,7 +20,13 @@ export const changeStadium = (state = initialStadiumState, action = {}) => {
 
 const initialDataState = {
   isPending: false,
-  data: { stadiums: [] },
+  data: {
+    stadiums: [],
+    tvchannels: [],
+    teams: [],
+    groups: {},
+    knockout: {}
+  },
   error: ""
 };
 
