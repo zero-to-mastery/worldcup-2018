@@ -3,8 +3,7 @@ import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import StatisticTable from "./StatisticTable/StatisticTable";
 import styles from "../../css_modules/statistic.css";
-import { scorerData } from "./data/top_scorer";
-import { assistData } from "./data/top_assists";
+import { playerData } from "./data/team_players";
 
 // Currently hard coded data
 class Statistics extends React.Component {
@@ -12,12 +11,32 @@ class Statistics extends React.Component {
     super(props);
     this.state = {
       topScorers: [],
-      topAssits: []
+      topAssits: [],
     };
   }
 
   componentDidMount() {
-    this.setState({ topScorers: scorerData, topAssits: assistData });
+    let players = [];
+
+    for (let obj of playerData) {
+      obj.players.map(player => {
+        player.team = obj.team;
+        player.teamid=obj.teamid;
+        return true;
+      });
+      players = players.concat(obj.players);
+    }
+
+    let topAssistPlayers = players.sort((a, b) => {
+      return b.assists - a.assists;
+    }).slice(0,10);
+
+    let topGoalPlayers = players.sort((a, b) => {
+      return b.goals - a.goals;
+    }).slice(0,10);
+
+
+    this.setState({ topScorers: topGoalPlayers, topAssits: topAssistPlayers });
   }
 
   renderStatistics() {

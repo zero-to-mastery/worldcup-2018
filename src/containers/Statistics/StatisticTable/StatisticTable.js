@@ -14,7 +14,7 @@ const StatisticTable = ({ title, data, className }) => {
       .sort((a, b) => a[parameter] < b[parameter])
       .map(player => {
         return (
-          <TableRow key={player.id}>
+          <TableRow key={player.teamid+""+player.id}>
             <TableCell component="th" scope="row">
               {player.name}
             </TableCell>
