@@ -334,7 +334,6 @@ export const playerData = [
   {
     team: "Tunisia",
     teamid: 27,
-<<<<<<< HEAD
     players: [
       {
         id: 1,
@@ -343,14 +342,10 @@ export const playerData = [
         assists: 0
       }
     ]
-=======
-    players: []
->>>>>>> 7d7bdb2fe297f6f863616cd7785aebf3a3fd8629
   },
   {
     team: "England",
     teamid: 28,
-<<<<<<< HEAD
     players: [
       {
         id: 1,
@@ -360,13 +355,10 @@ export const playerData = [
       },{
         id: 2,
         name: "Harry Maguire",
-        goals: 2,
-        assists: 0
+        goals: 0,
+        assists: 1
       }
     ]
-=======
-    players: []
->>>>>>> 7d7bdb2fe297f6f863616cd7785aebf3a3fd8629
   },
   {
     team: "Poland",
