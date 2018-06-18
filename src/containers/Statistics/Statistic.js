@@ -11,7 +11,7 @@ class Statistics extends React.Component {
     super(props);
     this.state = {
       topScorers: [],
-      topAssits: [],
+      topAssits: []
     };
   }
 
@@ -21,20 +21,23 @@ class Statistics extends React.Component {
     for (let obj of playerData) {
       obj.players.map(player => {
         player.team = obj.team;
-        player.teamid=obj.teamid;
+        player.teamid = obj.teamid;
         return true;
       });
       players = players.concat(obj.players);
     }
 
-    let topAssistPlayers = players.sort((a, b) => {
-      return b.assists - a.assists;
-    }).slice(0,10);
+    let topAssistPlayers = players
+      .sort((a, b) => {
+        return b.assists - a.assists;
+      })
+      .slice(0, 10);
 
-    let topGoalPlayers = players.sort((a, b) => {
-      return b.goals - a.goals;
-    }).slice(0,10);
-
+    let topGoalPlayers = players
+      .sort((a, b) => {
+        return b.goals - a.goals;
+      })
+      .slice(0, 10);
 
     this.setState({ topScorers: topGoalPlayers, topAssits: topAssistPlayers });
   }
