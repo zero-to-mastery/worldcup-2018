@@ -1,27 +1,23 @@
 import _ from "lodash";
 import React from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import { setData } from "../../actions";
 import styles from "../../css_modules/home-page.css";
 
-class HomePage extends React.Component {
-  state = {
-    groups: {},
-    teams: [],
-    knockout: {}
-  };
+const mapStateToProps = state => {
+  const { isPending, error, data } = state.requestData;
+  const { groups, teams, knockout } = data;
+  return { groups, teams, knockout, isPending, error };
+};
 
+const mapDispatchToProps = dispatch => ({
+  onRequestData: () => dispatch(setData())
+});
+
+class HomePage extends React.Component {
   componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
-    )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          groups: data.groups,
-          teams: data.teams,
-          knockout: data.knockout
-        });
-      });
+    this.props.onRequestData();
   }
 
   /**
@@ -49,8 +45,8 @@ class HomePage extends React.Component {
     }
 
     // get knockout match dates
-    if (!_.isEmpty(this.state.knockout)) {
-      for (let value of Object.values(this.state.knockout)) {
+    if (!_.isEmpty(this.props.knockout)) {
+      for (let value of Object.values(this.props.knockout)) {
         knockoutMatches.push(value.matches);
       }
       knockoutMatches.map(knockoutMatch => {
@@ -95,7 +91,7 @@ class HomePage extends React.Component {
    * @returns {object} team details
    */
   getTeam(type, matchDetails) {
-    let { teams, knockout } = this.state;
+    let { teams, knockout } = this.props;
     let myTeam;
 
     if (!_.isEmpty(matchDetails) && matchDetails.type !== "winner") {
@@ -128,7 +124,7 @@ class HomePage extends React.Component {
    * @returns {object} Final Match Details
    */
   getFinalMatchDetails() {
-    const { knockout } = this.state;
+    const { knockout } = this.props;
     let finalMatch = {};
 
     _.values(knockout).map(knockout => {
@@ -141,7 +137,7 @@ class HomePage extends React.Component {
   }
 
   renderTeamDetails() {
-    const { groups } = this.state;
+    const { groups } = this.props;
     let matchDetails = this.getUpcomingMatchDetails(groups);
 
     if (_.isEmpty(matchDetails)) {
@@ -173,7 +169,7 @@ class HomePage extends React.Component {
   }
 
   render() {
-    const { groups } = this.state;
+    const { groups } = this.props;
     let matchDetails = this.getUpcomingMatchDetails(groups);
     const nextMatchDate = this.getNextMatchDate(matchDetails);
 
@@ -203,4 +199,9 @@ class HomePage extends React.Component {
   }
 }
 
-export default withRouter(HomePage);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(HomePage)
+);
