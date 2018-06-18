@@ -13,14 +13,12 @@ const mapStateToProps = state => ({
   error: state.requestData.error
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onChangeStadium: id => {
-      dispatch(setCurrentStadium(id));
-    },
-    onRequestData: () => dispatch(setData())
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  onChangeStadium: id => {
+    dispatch(setCurrentStadium(id));
+  },
+  onRequestData: () => dispatch(setData())
+});
 
 class StadiumPage extends Component {
   componentDidMount() {

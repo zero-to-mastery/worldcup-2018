@@ -7,8 +7,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import styles from '../../css_modules/team-details.css';
-
+import styles from "../../css_modules/team-details.css";
 
 const CustomTableCell = withStyles(theme => ({
   head: {
@@ -36,37 +35,36 @@ const data = [
 ];
 
 function CustomizedTable(props) {
-
   return (
     <div className={styles.parentDiv}>
-    <Paper className={styles.root}>
-      <Table className={styles.table}>
-        <TableHead>
-          <TableRow>
-            <CustomTableCell>Teams</CustomTableCell>
-            <CustomTableCell numeric>Trophies</CustomTableCell>
-            <CustomTableCell numeric>Participations</CustomTableCell>
-            <CustomTableCell numeric>Wins</CustomTableCell>
-            <CustomTableCell numeric>Loses</CustomTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {data.map((n,i) => {
-            return (
-              <TableRow className={styles.row} key={i}>
-                <CustomTableCell component="th" scope="row">
-                  {n.teams}
-                </CustomTableCell>
-                <CustomTableCell numeric>{n.trophies}</CustomTableCell>
-                <CustomTableCell numeric>{n.participations}</CustomTableCell>
-                <CustomTableCell numeric>{n.wins}</CustomTableCell>
-                <CustomTableCell numeric>{n.loses}</CustomTableCell>
-              </TableRow>
-            );
-          })}
-        </TableBody>
-      </Table>
-    </Paper>
+      <Paper className={styles.root}>
+        <Table className={styles.table}>
+          <TableHead>
+            <TableRow>
+              <CustomTableCell>Teams</CustomTableCell>
+              <CustomTableCell numeric>Trophies</CustomTableCell>
+              <CustomTableCell numeric>Participations</CustomTableCell>
+              <CustomTableCell numeric>Wins</CustomTableCell>
+              <CustomTableCell numeric>Loses</CustomTableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((n, i) => {
+              return (
+                <TableRow className={styles.row} key={i}>
+                  <CustomTableCell component="th" scope="row">
+                    {n.teams}
+                  </CustomTableCell>
+                  <CustomTableCell numeric>{n.trophies}</CustomTableCell>
+                  <CustomTableCell numeric>{n.participations}</CustomTableCell>
+                  <CustomTableCell numeric>{n.wins}</CustomTableCell>
+                  <CustomTableCell numeric>{n.loses}</CustomTableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </Paper>
     </div>
   );
 }

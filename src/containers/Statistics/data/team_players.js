@@ -8,22 +8,26 @@ export const playerData = [
         name: "Yuri Gazinskiy",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Denis Cheryshev",
         goals: 2,
         assists: 0
-      },{
+      },
+      {
         id: 3,
         name: "Artem Dzyuba",
         goals: 1,
         assists: 1
-      },{
+      },
+      {
         id: 4,
         name: "Aleksandr Golovin",
         goals: 1,
         assists: 2
-      },{
+      },
+      {
         id: 5,
         name: "Roman Zobnin",
         goals: 0,
@@ -34,16 +38,12 @@ export const playerData = [
   {
     team: "Saudi Arabia",
     teamid: 2,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Egypt",
     teamid: 3,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Uruguay",
@@ -54,7 +54,8 @@ export const playerData = [
         name: "Jose Gimenez",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 1,
         name: "Carlos Sanchez",
         goals: 0,
@@ -71,7 +72,8 @@ export const playerData = [
         name: "Cristiano Ronaldo",
         goals: 3,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Goncalo Guedes",
         goals: 0,
@@ -88,12 +90,14 @@ export const playerData = [
         name: "Diego Costa",
         goals: 2,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Nacho Fernandez",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 3,
         name: "Sergio Busquets",
         goals: 0,
@@ -104,16 +108,12 @@ export const playerData = [
   {
     team: "Morocco",
     teamid: 7,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Iran",
     teamid: 8,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "France",
@@ -142,9 +142,7 @@ export const playerData = [
   {
     team: "Peru",
     teamid: 11,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Denmark",
@@ -155,7 +153,8 @@ export const playerData = [
         name: "Yussuf Poulsen",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Christian Eriksen",
         goals: 0,
@@ -172,7 +171,8 @@ export const playerData = [
         name: "Sergio Aguero",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Marcos Rojo",
         goals: 0,
@@ -207,9 +207,7 @@ export const playerData = [
   {
     team: "Nigeria",
     teamid: 16,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Brazil",
@@ -232,7 +230,8 @@ export const playerData = [
         name: "Steven Zuber",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Xherdan Shaqiri",
         goals: 0,
@@ -243,9 +242,7 @@ export const playerData = [
   {
     team: "Costa Rica",
     teamid: 19,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Serbia",
@@ -262,9 +259,7 @@ export const playerData = [
   {
     team: "Germany",
     teamid: 21,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Mexico",
@@ -275,7 +270,8 @@ export const playerData = [
         name: "Hirving Lozano",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Javier Hernandez",
         goals: 0,
@@ -298,9 +294,7 @@ export const playerData = [
   {
     team: "South Korea",
     teamid: 24,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Belgium",
@@ -311,17 +305,20 @@ export const playerData = [
         name: "Dries Mertens",
         goals: 1,
         assists: 0
-      },{
+      },
+      {
         id: 2,
         name: "Romelu Lukaku",
         goals: 2,
         assists: 0
-      },{
+      },
+      {
         id: 3,
         name: "Kevin De Bruyne",
         goals: 0,
         assists: 1
-      },{
+      },
+      {
         id: 4,
         name: "Eden Hazard",
         goals: 0,
@@ -332,50 +329,36 @@ export const playerData = [
   {
     team: "Panama",
     teamid: 26,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Tunisia",
     teamid: 27,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "England",
     teamid: 28,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Poland",
     teamid: 29,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Senegal",
     teamid: 30,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Colombia",
     teamid: 31,
-    players: [
-
-    ]
+    players: []
   },
   {
     team: "Japan",
     teamid: 32,
-    players: [
-
-    ]
+    players: []
   }
-]
+];
