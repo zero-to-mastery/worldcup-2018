@@ -334,12 +334,31 @@ export const playerData = [
   {
     team: "Tunisia",
     teamid: 27,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Ferjani Sassi",
+        goals: 1,
+        assists: 0
+      }
+    ]
   },
   {
     team: "England",
     teamid: 28,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Harry Kane",
+        goals: 2,
+        assists: 0
+      },{
+        id: 2,
+        name: "Harry Maguire",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Poland",
