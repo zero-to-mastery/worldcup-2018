@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { setData } from "../../actions";
 import { withStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -28,31 +30,30 @@ const styles = {
   }
 };
 
+const mapStateToProps = ({ requestData }) => {
+  const {
+    groups,
+    teams,
+    stadiums,
+    knockout: knockoutMatches
+  } = requestData.data;
+  return { groups, teams, stadiums, knockoutMatches };
+};
+
+const mapDispatchToProps = dispatch => ({
+  onRequestData: () => dispatch(setData())
+});
+
 class Fixtures extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      groups: {},
-      teams: [],
-      statiums: [],
-      knockoutMatches: {},
       tabSelector: 0
     };
   }
 
   componentDidMount() {
-    fetch(
-      "https://raw.githubusercontent.com/lsv/fifa-worldcup-2018/master/data.json"
-    )
-      .then(res => res.json())
-      .then(data => {
-        this.setState({
-          groups: data.groups,
-          teams: data.teams,
-          stadiums: data.stadiums,
-          knockoutMatches: data.knockout
-        });
-      });
+    this.props.onRequestData();
   }
 
   handleTabChange = (event, tabSelector) => {
@@ -60,14 +61,9 @@ class Fixtures extends React.Component {
   };
 
   renderFixtures() {
-    const {
-      groups,
-      teams,
-      stadiums,
-      tabSelector,
-      knockoutMatches
-    } = this.state;
-    const { classes } = this.props;
+    const { groups, teams, stadiums, knockoutMatches, classes } = this.props;
+    const { tabSelector } = this.state;
+
     let matches = [];
     let knockouts = [];
 
@@ -81,16 +77,8 @@ class Fixtures extends React.Component {
       knockouts.push(value);
     }
 
-    let groupProps = {
-      matches: matches,
-      teams: teams,
-      stadiums: stadiums
-    };
-
-    let knockoutProps = {
-      knockouts: knockouts,
-      stadiums: stadiums
-    };
+    let groupProps = { matches, teams, stadiums };
+    let knockoutProps = { knockouts, stadiums };
 
     return (
       <div className={classes.fixturesContainer}>
@@ -121,4 +109,9 @@ Fixtures.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(Fixtures);
+export default withStyles(styles)(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Fixtures)
+);
