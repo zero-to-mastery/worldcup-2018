@@ -48,12 +48,19 @@ class Fixtures extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabSelector: 0
+      tabSelector: 0,
+      checkedResults: true,
+      checkedFixtures: true,
+      groupMatches: []
     };
   }
 
   componentDidMount() {
     this.props.onRequestData();
+  }
+
+  onMatchCategoryChange = name => event => {
+    this.setState({[name]: event.target.checked});
   }
 
   handleTabChange = (event, tabSelector) => {
@@ -62,22 +69,23 @@ class Fixtures extends React.Component {
 
   renderFixtures() {
     const { groups, teams, stadiums, knockoutMatches, classes } = this.props;
-    const { tabSelector } = this.state;
+    const { tabSelector, checkedResults, checkedFixtures } = this.state;
+    const {onMatchCategoryChange} = this;
 
-    let matches = [];
+    let groupMatches = [];
     let knockouts = [];
 
     for (let value of Object.values(groups)) {
       let groupName = value.name;
       value.matches.map(match => (match.groupName = groupName));
-      matches = matches.concat(value.matches);
+      groupMatches = groupMatches.concat(value.matches);
     }
 
     for (let value of Object.values(knockoutMatches)) {
       knockouts.push(value);
     }
 
-    let groupProps = { matches, teams, stadiums };
+    let groupProps = { groupMatches, teams, stadiums, checkedResults, checkedFixtures, onMatchCategoryChange };
     let knockoutProps = { knockouts, stadiums };
 
     return (
@@ -89,7 +97,7 @@ class Fixtures extends React.Component {
           </Tabs>
         </AppBar>
         <div>
-          <div className={fixtureStyles.displayGrid}>
+          <div>
             {tabSelector === 0 && <GroupFixtures {...groupProps} />}
           </div>
           <div className={fixtureStyles.displayKnockout}>
