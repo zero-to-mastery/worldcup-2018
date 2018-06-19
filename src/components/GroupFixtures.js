@@ -60,6 +60,10 @@ const styles = {
     borderLeft: "1px solid silver",
     color: "silver",
     padding: 5
+  },
+  textStyle: {
+    fontSize: "1.25em",
+    color: "white"
   }
 };
 
@@ -69,14 +73,15 @@ const GroupFixtures = ({ groupMatches, teams, stadiums, checkedFixtures, checked
   });
 
   return (<div>
-    <label>
+    <span className={classes.textStyle}>Show: </span>
+    <label className={classes.textStyle}>
     <Checkbox
         checked={checkedFixtures}
         onChange={onMatchCategoryChange('checkedFixtures')}
         value="fixtures"
         color="primary"
    />Fixtures</label>
-   <label><Checkbox
+   <label className={classes.textStyle}><Checkbox
        checked={checkedResults}
        onChange={onMatchCategoryChange('checkedResults')}
        value="results"
