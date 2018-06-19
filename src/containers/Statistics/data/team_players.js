@@ -363,21 +363,64 @@ export const playerData = [
   {
     team: "Poland",
     teamid: 29,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Grzegorz Krychowiak",
+        goals: 1,
+        assists: 0
+      },{
+        id: 2,
+        name: "Kamil Grosicki",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Senegal",
     teamid: 30,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Mbaye Niang",
+        goals: 1,
+        assists: 0
+      }
+    ]
   },
   {
     team: "Colombia",
     teamid: 31,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Juan Quintero",
+        goals: 1,
+        assists: 0
+      }
+    ]
   },
   {
     team: "Japan",
     teamid: 32,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Shinji Kagawa",
+        goals: 1,
+        assists: 0
+      },{
+        id: 2,
+        name: "Yuya Osako",
+        goals: 1,
+        assists: 0
+      },{
+        id: 3,
+        name: "Keisuke Honda",
+        goals: 0,
+        assists: 1
+      }
+    ]
   }
 ];
