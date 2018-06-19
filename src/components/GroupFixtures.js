@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import Typography from "@material-ui/core/Typography";
+import fixtureStyles from "../css_modules/fixtures.css";
+import Checkbox from '@material-ui/core/Checkbox';
 
 const styles = {
   matchCard: {
@@ -58,15 +60,44 @@ const styles = {
     borderLeft: "1px solid silver",
     color: "silver",
     padding: 5
+  },
+  textStyle: {
+    fontSize: "1.25em",
+    color: "white"
   }
 };
 
-const GroupFixtures = ({ matches, teams, stadiums, classes }) => {
-  matches = matches.sort((a, b) => {
+const GroupFixtures = ({ groupMatches, teams, stadiums, checkedFixtures, checkedResults, onMatchCategoryChange, classes }) => {
+  groupMatches = groupMatches.sort((a, b) => {
     return new Date(a.date) - new Date(b.date);
   });
 
-  return matches.map((match, i) => {
+  return (<div>
+    <span className={classes.textStyle}>Show: </span>
+    <label className={classes.textStyle}>
+    <Checkbox
+        checked={checkedFixtures}
+        onChange={onMatchCategoryChange('checkedFixtures')}
+        value="fixtures"
+        color="primary"
+   />Fixtures</label>
+   <label className={classes.textStyle}><Checkbox
+       checked={checkedResults}
+       onChange={onMatchCategoryChange('checkedResults')}
+       value="results"
+       color="primary"
+  />Results</label>
+   <div className={fixtureStyles.displayGrid}>
+  { groupMatches.filter(match => {
+      if(checkedFixtures && checkedResults){
+        return match;
+      }else if(checkedResults){
+        return new Date(match.date) <= new Date();
+      }else if(checkedFixtures){
+        return new Date(match.date) > new Date();
+      }
+      return [];
+  }).map((match, i) => {
     let homeTeam = teams.filter(team => team.id === match.home_team);
     let awayTeam = teams.filter(team => team.id === match.away_team);
     let matchDate = new Date(match.date);
@@ -133,7 +164,9 @@ const GroupFixtures = ({ matches, teams, stadiums, classes }) => {
         </div>
       </Card>
     );
-  });
+  })}
+  </div>
+  </div>)
 };
 
 GroupFixtures.propTypes = {
