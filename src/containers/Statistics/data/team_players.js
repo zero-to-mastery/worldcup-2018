@@ -76,10 +76,16 @@ export const playerData = [
         assists: 0
       },
       {
-        id: 1,
+        id: 2,
         name: "Carlos Sanchez",
         goals: 0,
-        assists: 1
+        assists: 2
+      },
+      {
+        id: 3,
+        name: "Luis Suarez",
+        goals: 1,
+        assists: 0
       }
     ]
   },
@@ -90,12 +96,17 @@ export const playerData = [
       {
         id: 1,
         name: "Cristiano Ronaldo",
-        goals: 3,
+        goals: 4,
         assists: 0
       },
       {
         id: 2,
         name: "Goncalo Guedes",
+        goals: 0,
+        assists: 1
+      },{
+        id: 3,
+        name: "Joao Moutinho",
         goals: 0,
         assists: 1
       }
@@ -108,7 +119,7 @@ export const playerData = [
       {
         id: 1,
         name: "Diego Costa",
-        goals: 2,
+        goals: 3,
         assists: 0
       },
       {
