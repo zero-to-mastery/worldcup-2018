@@ -12,13 +12,13 @@ export const playerData = [
       {
         id: 2,
         name: "Denis Cheryshev",
-        goals: 2,
+        goals: 3,
         assists: 0
       },
       {
         id: 3,
         name: "Artem Dzyuba",
-        goals: 1,
+        goals: 2,
         assists: 1
       },
       {
@@ -32,18 +32,38 @@ export const playerData = [
         name: "Roman Zobnin",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 6,
+        name: "Mario Fernandes",
+        goals: 0,
+        assists: 1
+      },{
+        id: 7,
+        name: "Ilya Kutepov",
+        goals: 0,
+        assists: 1
       }
     ]
   },
   {
     team: "Saudi Arabia",
     teamid: 2,
-    players: []
+    players: [
+
+    ]
   },
   {
     team: "Egypt",
     teamid: 3,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Mohamed Salah",
+        goals: 1,
+        assists: 0
+      }
+    ]
   },
   {
     team: "Uruguay",
