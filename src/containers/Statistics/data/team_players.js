@@ -139,12 +139,16 @@ export const playerData = [
   {
     team: "Morocco",
     teamid: 7,
-    players: []
+    players: [
+
+    ]
   },
   {
     team: "Iran",
     teamid: 8,
-    players: []
+    players: [
+
+    ]
   },
   {
     team: "France",
@@ -153,6 +157,11 @@ export const playerData = [
       {
         id: 1,
         name: "Antoine Griezmann",
+        goals: 1,
+        assists: 0
+      },{
+        id: 2,
+        name: "Kylian Mbappe",
         goals: 1,
         assists: 0
       }
@@ -165,7 +174,7 @@ export const playerData = [
       {
         id: 1,
         name: "Mile Jedinak",
-        goals: 1,
+        goals: 2,
         assists: 0
       }
     ]
@@ -188,6 +197,11 @@ export const playerData = [
       {
         id: 2,
         name: "Christian Eriksen",
+        goals: 1,
+        assists: 1
+      },{
+        id: 3,
+        name: "Nicolai Joergensen",
         goals: 0,
         assists: 1
       }
@@ -230,6 +244,26 @@ export const playerData = [
       {
         id: 1,
         name: "Luka Modric",
+        goals: 2,
+        assists: 0
+      },{
+        id: 2,
+        name: "Ante Rebic",
+        goals: 1,
+        assists: 0
+      },{
+        id: 3,
+        name: "Marcelo Brozovic",
+        goals: 0,
+        assists: 1
+      },{
+        id: 4,
+        name: "Mateo Kovacic",
+        goals: 0,
+        assists: 1
+      },{
+        id: 5,
+        name: "Ivan Rakitic",
         goals: 1,
         assists: 0
       }
