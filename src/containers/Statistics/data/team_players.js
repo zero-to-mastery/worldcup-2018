@@ -281,6 +281,21 @@ export const playerData = [
       {
         id: 1,
         name: "Philippe Coutinho",
+        goals: 2,
+        assists: 0
+      },{
+        id: 2,
+        name: "Gabriel Jesus",
+        goals: 0,
+        assists: 1
+      },{
+        id: 3,
+        name: "Douglas Costa",
+        goals: 0,
+        assists: 1
+      },{
+        id: 4,
+        name: "Neymar",
         goals: 1,
         assists: 0
       }
