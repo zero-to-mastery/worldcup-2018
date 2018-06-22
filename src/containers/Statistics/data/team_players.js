@@ -272,7 +272,24 @@ export const playerData = [
   {
     team: "Nigeria",
     teamid: 16,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Ahmed Musa",
+        goals: 2,
+        assists: 0
+      },{
+        id: 2,
+        name: "Victor Moses",
+        goals: 0,
+        assists: 1
+      },{
+        id: 3,
+        name: "Kenneth Omeruo",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Brazil",
@@ -314,6 +331,18 @@ export const playerData = [
       {
         id: 2,
         name: "Xherdan Shaqiri",
+        goals: 1,
+        assists: 1
+      },
+      {
+        id: 3,
+        name: "Granit Xhaka",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 4,
+        name: "Mario Gavranovic",
         goals: 0,
         assists: 1
       }
@@ -333,6 +362,16 @@ export const playerData = [
         name: "Aleksandar Kolarov",
         goals: 1,
         assists: 0
+      },{
+        id: 2,
+        name: "Aleksandar Mitrovic",
+        goals: 1,
+        assists: 0
+      },{
+        id: 3,
+        name: "Dusan Tadic",
+        goals: 0,
+        assists: 1
       }
     ]
   },
