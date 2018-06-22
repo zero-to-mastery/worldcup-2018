@@ -61,10 +61,13 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "precommit": "pretty-quick --staged"
   },
   "devDependencies": {
-    "prettier": "^1.13.4"
+    "husky": "^0.14.3",
+    "prettier": "^1.13.4",
+    "pretty-quick": "^1.6.0"
   },
   "jest": {
     "collectCoverageFrom": [
