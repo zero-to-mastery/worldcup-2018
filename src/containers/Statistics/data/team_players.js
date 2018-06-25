@@ -531,7 +531,20 @@ export const playerData = [
   {
     team: "Panama",
     teamid: 26,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Felipe Baloy",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 2,
+        name: "Ricardo Avila",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Tunisia",
@@ -570,12 +583,36 @@ export const playerData = [
       {
         id: 1,
         name: "Harry Kane",
-        goals: 2,
+        goals: 5,
         assists: 0
       },
       {
         id: 2,
         name: "Harry Maguire",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 3,
+        name: "John Stones",
+        goals: 2,
+        assists: 0
+      },
+      {
+        id: 4,
+        name: "Jesse Lingard",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 5,
+        name: "Kieran Trippier",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 6,
+        name: "Raheem Sterling",
         goals: 0,
         assists: 1
       }
@@ -607,6 +644,18 @@ export const playerData = [
         id: 1,
         name: "Mbaye Niang",
         goals: 1,
+        assists: 1
+      },
+      {
+        id: 2,
+        name: "Sadio Mane",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 3,
+        name: "Moussa Wague",
+        goals: 1,
         assists: 0
       }
     ]
@@ -619,7 +668,31 @@ export const playerData = [
         id: 1,
         name: "Juan Quintero",
         goals: 1,
+        assists: 1
+      },
+      {
+        id: 2,
+        name: "Yerry Mina",
+        goals: 1,
         assists: 0
+      },
+      {
+        id: 3,
+        name: "Radamel Falcao",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 4,
+        name: "Juan Cuadrado",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 5,
+        name: "James Rodriguez",
+        goals: 0,
+        assists: 2
       }
     ]
   },
@@ -642,6 +715,18 @@ export const playerData = [
       {
         id: 3,
         name: "Keisuke Honda",
+        goals: 1,
+        assists: 1
+      },
+      {
+        id: 4,
+        name: "Takashi Inui",
+        goals: 1,
+        assists: 1
+      },
+      {
+        id: 5,
+        name: "Yuto Nagatomo",
         goals: 0,
         assists: 1
       }
