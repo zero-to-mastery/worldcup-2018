@@ -50,7 +50,26 @@ export const playerData = [
   {
     team: "Saudi Arabia",
     teamid: 2,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Salman Al-Faraj",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 2,
+        name: "Salem Al-Dawsari",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 3,
+        name: "Abdullah Otayf",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Egypt",
@@ -59,8 +78,14 @@ export const playerData = [
       {
         id: 1,
         name: "Mohamed Salah",
-        goals: 1,
+        goals: 2,
         assists: 0
+      },
+      {
+        id: 2,
+        name: "Abdalla El Said",
+        goals: 0,
+        assists: 1
       }
     ]
   },
@@ -83,6 +108,12 @@ export const playerData = [
       {
         id: 3,
         name: "Luis Suarez",
+        goals: 2,
+        assists: 0
+      },
+      {
+        id: 4,
+        name: "Edinson Cavani",
         goals: 1,
         assists: 0
       }
@@ -109,6 +140,18 @@ export const playerData = [
         name: "Joao Moutinho",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 4,
+        name: "Ricardo Quaresma",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 5,
+        name: "Adrien Silva",
+        goals: 0,
+        assists: 1
       }
     ]
   },
@@ -133,18 +176,68 @@ export const playerData = [
         name: "Sergio Busquets",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 4,
+        name: "Andres Iniesta",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 5,
+        name: "Daniel Carvajal",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 6,
+        name: "Isco",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 7,
+        name: "Iago Aspas",
+        goals: 1,
+        assists: 0
       }
     ]
   },
   {
     team: "Morocco",
     teamid: 7,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Khalid Boutaib",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 2,
+        name: "Youssef En-Nesyri",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 4,
+        name: "Faycal Fajr",
+        goals: 0,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Iran",
     teamid: 8,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Karim Ansarifard",
+        goals: 1,
+        assists: 0
+      }
+    ]
   },
   {
     team: "France",
