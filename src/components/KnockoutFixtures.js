@@ -82,7 +82,7 @@ const styles = {
   }
 };
 
-const KnockoutFixtures = ({ knockouts, classes, stadiums }) => {
+const KnockoutFixtures = ({ knockouts, classes, stadiums, teams }) => {
   return knockouts.map((knockoutRound, i) => (
     <div className={classes.round} key={i}>
       <Typography className={classes.roundTitle}>
@@ -90,8 +90,9 @@ const KnockoutFixtures = ({ knockouts, classes, stadiums }) => {
       </Typography>
       <div className={classes.roundMatches}>
         {knockoutRound.matches.map((match, j) => {
-          //let homeTeam = teams.filter(team => team.id === match.home_team);
-          //let awayTeam = teams.filter(team => team.id === match.away_team);
+          let homeTeam = teams.filter(team => team.id === match.home_team);
+          let awayTeam = teams.filter(team => team.id === match.away_team);
+
           let matchDate = new Date(match.date);
           let stadium = stadiums.filter(
             stadium => stadium.id === match.stadium
@@ -118,27 +119,31 @@ const KnockoutFixtures = ({ knockouts, classes, stadiums }) => {
                     <img
                       className={classes.flag}
                       src={
-                        "https://vignette.wikia.nocookie.net/cybernations/images/d/d0/Placeholder_Flag.svg/revision/latest?cb=20100430021730"
+                        homeTeam.length
+                          ? homeTeam[0].flag
+                          : "https://vignette.wikia.nocookie.net/cybernations/images/d/d0/Placeholder_Flag.svg/revision/latest?cb=20100430021730"
                       }
                       alt=""
                     />
                     <Typography className={classes.teamName}>
-                      {"TBD"}
+                      {homeTeam.length ? homeTeam[0].name : "TBD"}
                     </Typography>
-                    <Typography>{"-"}</Typography>
+                    <Typography>{match.home_result}</Typography>
                   </div>
                   <div className={classes.team}>
                     <img
                       className={classes.flag}
                       src={
-                        "https://vignette.wikia.nocookie.net/cybernations/images/d/d0/Placeholder_Flag.svg/revision/latest?cb=20100430021730"
+                        awayTeam.length
+                          ? awayTeam[0].flag
+                          : "https://vignette.wikia.nocookie.net/cybernations/images/d/d0/Placeholder_Flag.svg/revision/latest?cb=20100430021730"
                       }
                       alt=""
                     />
                     <Typography className={classes.teamName}>
-                      {"TBD"}
+                      {awayTeam.length ? awayTeam[0].name : "TBD"}
                     </Typography>
-                    <Typography>{"-"}</Typography>
+                    <Typography>{match.away_result}</Typography>
                   </div>
                 </div>
                 <div className={classes.datetime}>
