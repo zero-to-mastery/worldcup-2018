@@ -70,10 +70,24 @@ class HomePage extends React.Component {
       });
     }
 
+    console.log(knockoutMatches);
+
     // get upcoming match group
     if (groupnames.length) {
       groupnames.map(group => {
         return group.matches.map(match => {
+          if (match.date === upcomingMatchDate) {
+            upcomingMatchGroup = match;
+          }
+          return upcomingMatchGroup;
+        });
+      });
+    }
+
+    //ge upcoming knockout match
+    if (knockoutMatches.length) {
+      knockoutMatches.map(knockoutPhase => {
+        return knockoutPhase.map(match => {
           if (match.date === upcomingMatchDate) {
             upcomingMatchGroup = match;
           }
