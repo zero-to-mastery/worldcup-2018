@@ -272,7 +272,20 @@ export const playerData = [
   {
     team: "Peru",
     teamid: 11,
-    players: []
+    players: [
+      {
+        id: 1,
+        name: "Andre Carrillo",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 2,
+        name: "Jose Paolo Guerrero",
+        goals: 1,
+        assists: 1
+      }
+    ]
   },
   {
     team: "Denmark",
@@ -311,8 +324,26 @@ export const playerData = [
       {
         id: 2,
         name: "Marcos Rojo",
+        goals: 1,
+        assists: 1
+      },
+      {
+        id: 3,
+        name: "Ever Banega",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 4,
+        name: "Gabriel Mercado",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 5,
+        name: "Lionel Messi",
+        goals: 1,
+        assists: 0
       }
     ]
   },
@@ -323,6 +354,12 @@ export const playerData = [
       {
         id: 1,
         name: "Alfred Finnbogason",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 2,
+        name: "Gylfi Sigurdsson",
         goals: 1,
         assists: 0
       }
@@ -361,6 +398,24 @@ export const playerData = [
         name: "Ivan Rakitic",
         goals: 1,
         assists: 0
+      },
+      {
+        id: 6,
+        name: "Milan Badelj",
+        goals: 1,
+        assists: 1
+      },
+      {
+        id: 7,
+        name: "Josip Pivaric",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 8,
+        name: "Ivan Perisic",
+        goals: 1,
+        assists: 0
       }
     ]
   },
@@ -377,7 +432,7 @@ export const playerData = [
       {
         id: 2,
         name: "Victor Moses",
-        goals: 0,
+        goals: 1,
         assists: 1
       },
       {
