@@ -48,7 +48,7 @@ class Fixtures extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tabSelector: 0,
+      tabSelector: 1,
       checkedResults: true,
       checkedFixtures: true,
       groupMatches: []

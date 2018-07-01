@@ -16,8 +16,8 @@ const styles = {
     fontSize: "2em",
     fontWeight: "bold",
     fontFamily: "Roboto",
-    backgroundColor: "silver",
-    width: "70%",
+    backgroundColor: "#3F51B5",
+    width: "98%",
     alignSelf: "center"
   },
   roundMatches: {
