@@ -16,8 +16,8 @@ const styles = {
     fontSize: "2em",
     fontWeight: "bold",
     fontFamily: "Roboto",
-    backgroundColor: "silver",
-    width: "70%",
+    backgroundColor: "#3F51B5",
+    width: "98%",
     alignSelf: "center"
   },
   roundMatches: {
@@ -128,7 +128,13 @@ const KnockoutFixtures = ({ knockouts, classes, stadiums, teams }) => {
                     <Typography className={classes.teamName}>
                       {homeTeam.length ? homeTeam[0].name : "TBD"}
                     </Typography>
-                    <Typography>{match.home_result}</Typography>
+                    <Typography>
+                      {(match.home_result !== null ? match.home_result : "-") +
+                        "" +
+                        (match.home_penalty !== null
+                          ? "(" + match.home_penalty + ")"
+                          : "")}
+                    </Typography>
                   </div>
                   <div className={classes.team}>
                     <img
@@ -143,7 +149,13 @@ const KnockoutFixtures = ({ knockouts, classes, stadiums, teams }) => {
                     <Typography className={classes.teamName}>
                       {awayTeam.length ? awayTeam[0].name : "TBD"}
                     </Typography>
-                    <Typography>{match.away_result}</Typography>
+                    <Typography>
+                      {(match.away_result !== null ? match.away_result : "-") +
+                        "" +
+                        (match.away_penalty !== null
+                          ? "(" + match.away_penalty + ")"
+                          : "")}
+                    </Typography>
                   </div>
                 </div>
                 <div className={classes.datetime}>
