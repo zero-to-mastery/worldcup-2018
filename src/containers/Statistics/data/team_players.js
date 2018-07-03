@@ -528,7 +528,7 @@ export const playerData = [
       {
         id: 4,
         name: "Neymar",
-        goals: 1,
+        goals: 2,
         assists: 1
       },
       {
@@ -540,6 +540,12 @@ export const playerData = [
       {
         id: 6,
         name: "Thiago Silva",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 7,
+        name: "Roberto Firmino",
         goals: 1,
         assists: 0
       }
@@ -697,7 +703,7 @@ export const playerData = [
         id: 1,
         name: "Ola Toivonen",
         goals: 1,
-        assists: 0
+        assists: 1
       },
       {
         id: 2,
@@ -714,6 +720,12 @@ export const playerData = [
       {
         id: 4,
         name: "Augustinsson",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 5,
+        name: "Emil Forsberg",
         goals: 1,
         assists: 0
       }
@@ -775,7 +787,7 @@ export const playerData = [
         id: 4,
         name: "Eden Hazard",
         goals: 2,
-        assists: 1
+        assists: 2
       },
       {
         id: 5,
@@ -804,6 +816,30 @@ export const playerData = [
       {
         id: 9,
         name: "Adnan Januzaj",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 10,
+        name: "Jan Vertonghen",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 11,
+        name: "Marouane Fellaini",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 12,
+        name: "Nacer Chadli",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 13,
+        name: "Thomas Meunier",
         goals: 0,
         assists: 1
       }
@@ -876,7 +912,7 @@ export const playerData = [
       {
         id: 1,
         name: "Harry Kane",
-        goals: 5,
+        goals: 6,
         assists: 0
       },
       {
@@ -978,7 +1014,7 @@ export const playerData = [
       {
         id: 2,
         name: "Yerry Mina",
-        goals: 2,
+        goals: 3,
         assists: 0
       },
       {
@@ -991,7 +1027,7 @@ export const playerData = [
         id: 4,
         name: "Juan Cuadrado",
         goals: 1,
-        assists: 0
+        assists: 1
       },
       {
         id: 5,
@@ -1009,7 +1045,7 @@ export const playerData = [
         id: 1,
         name: "Shinji Kagawa",
         goals: 1,
-        assists: 0
+        assists: 1
       },
       {
         id: 2,
@@ -1020,7 +1056,7 @@ export const playerData = [
       {
         id: 3,
         name: "Keisuke Honda",
-        goals: 1,
+        goals: 2,
         assists: 1
       },
       {
@@ -1032,6 +1068,18 @@ export const playerData = [
       {
         id: 5,
         name: "Yuto Nagatomo",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 6,
+        name: "Genki Haraguchi",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 7,
+        name: "Gaku Shibasaki",
         goals: 0,
         assists: 1
       }
