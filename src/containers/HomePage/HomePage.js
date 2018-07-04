@@ -105,12 +105,12 @@ class HomePage extends React.Component {
    * @returns {object} team details
    */
   getTeam(type, matchDetails) {
-    let { teams, knockout } = this.props;
+    let { teams } = this.props; //,knockout
     let myTeam;
 
-    if (!_.isEmpty(matchDetails) && matchDetails.type !== "winner") {
-      myTeam = teams.filter(team => team.id === matchDetails[type]);
-    } else {
+    //if (!_.isEmpty(matchDetails) && matchDetails.type !== "winner") {
+    myTeam = teams.filter(team => team.id === matchDetails[type]);
+    /*} else {
       _.values(knockout).some(knockout => {
         if (knockout.name === "Semi-finals") {
           type === "home_team"
@@ -120,7 +120,7 @@ class HomePage extends React.Component {
         return myTeam;
       });
       myTeam = teams.filter(team => team.id === myTeam.winner);
-    }
+    }*/
     return myTeam;
   }
 
@@ -193,7 +193,7 @@ class HomePage extends React.Component {
 
     return (
       <div>
-        {!_.isEmpty(matchDetails) && matchDetails.type !== "winner" ? (
+        {!_.isEmpty(matchDetails) ? (
           <div className={styles.match_details}>
             <div className={styles.next_match}>
               <span> Next Match - {nextMatchDate} </span>
