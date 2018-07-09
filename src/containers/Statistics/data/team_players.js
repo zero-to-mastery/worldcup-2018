@@ -12,14 +12,14 @@ export const playerData = [
       {
         id: 2,
         name: "Denis Cheryshev",
-        goals: 3,
+        goals: 4,
         assists: 0
       },
       {
         id: 3,
         name: "Artem Dzyuba",
         goals: 3,
-        assists: 1
+        assists: 2
       },
       {
         id: 4,
@@ -36,12 +36,18 @@ export const playerData = [
       {
         id: 6,
         name: "Mario Fernandes",
-        goals: 0,
+        goals: 1,
         assists: 1
       },
       {
         id: 7,
         name: "Ilya Kutepov",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 8,
+        name: "Alan Dzagoev",
         goals: 0,
         assists: 1
       }
@@ -264,8 +270,8 @@ export const playerData = [
       {
         id: 1,
         name: "Antoine Griezmann",
-        goals: 2,
-        assists: 0
+        goals: 3,
+        assists: 1
       },
       {
         id: 2,
@@ -288,6 +294,18 @@ export const playerData = [
       {
         id: 5,
         name: "Olivier Giroud",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 6,
+        name: "Raphael Varane",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 7,
+        name: "Corentin Tolisso",
         goals: 0,
         assists: 1
       }
@@ -427,7 +445,7 @@ export const playerData = [
         id: 1,
         name: "Luka Modric",
         goals: 2,
-        assists: 0
+        assists: 1
       },
       {
         id: 2,
@@ -475,6 +493,18 @@ export const playerData = [
         id: 9,
         name: "Mario Mandzukic",
         goals: 1,
+        assists: 1
+      },
+      {
+        id: 9,
+        name: "Andrej Kramaric",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 10,
+        name: "Domagoj Vida",
+        goals: 1,
         assists: 0
       }
     ]
@@ -511,7 +541,7 @@ export const playerData = [
         id: 1,
         name: "Philippe Coutinho",
         goals: 2,
-        assists: 1
+        assists: 2
       },
       {
         id: 2,
@@ -546,6 +576,12 @@ export const playerData = [
       {
         id: 7,
         name: "Roberto Firmino",
+        goals: 1,
+        assists: 0
+      },
+      {
+        id: 8,
+        name: "Renato Augusto",
         goals: 1,
         assists: 0
       }
@@ -775,12 +811,12 @@ export const playerData = [
         id: 2,
         name: "Romelu Lukaku",
         goals: 4,
-        assists: 0
+        assists: 1
       },
       {
         id: 3,
         name: "Kevin De Bruyne",
-        goals: 0,
+        goals: 1,
         assists: 1
       },
       {
@@ -918,7 +954,7 @@ export const playerData = [
       {
         id: 2,
         name: "Harry Maguire",
-        goals: 0,
+        goals: 1,
         assists: 1
       },
       {
@@ -931,7 +967,7 @@ export const playerData = [
         id: 4,
         name: "Jesse Lingard",
         goals: 1,
-        assists: 0
+        assists: 1
       },
       {
         id: 5,
@@ -944,6 +980,18 @@ export const playerData = [
         name: "Raheem Sterling",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 7,
+        name: "Ashley Young",
+        goals: 0,
+        assists: 1
+      },
+      {
+        id: 8,
+        name: "Harry Maguire",
+        goals: 1,
+        assists: 0
       }
     ]
   },
