@@ -30,3 +30,5 @@ Please add your name to this list along with your Discord name
 -[mureiken](https://https://github.com/mureiken/) - Discord: mureiken
 
 -[ivan](https://https://github.com/kuetabby/) - Discord: caketabby
+
+-[vinpearland](https://https://github.com/vinpearland/) - Discord: vinpearland
