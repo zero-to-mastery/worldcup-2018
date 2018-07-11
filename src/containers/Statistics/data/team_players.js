@@ -271,7 +271,7 @@ export const playerData = [
         id: 1,
         name: "Antoine Griezmann",
         goals: 3,
-        assists: 1
+        assists: 2
       },
       {
         id: 2,
@@ -308,6 +308,12 @@ export const playerData = [
         name: "Corentin Tolisso",
         goals: 0,
         assists: 1
+      },
+      {
+        id: 8,
+        name: "Samuel Umtiti",
+        goals: 1,
+        assists: 0
       }
     ]
   },

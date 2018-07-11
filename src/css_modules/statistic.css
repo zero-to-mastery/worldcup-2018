@@ -22,7 +22,12 @@
 }
 
 thead tr {
-  background-color: black !important;
+  background-color: #3f51b5 !important;
+  border-bottom: 3px solid red;
+}
+
+th {
+  font-weight: bold !important;
 }
 
 .root {

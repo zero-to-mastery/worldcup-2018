@@ -11,7 +11,7 @@ import styles from "../../css_modules/team-details.css";
 
 const CustomTableCell = withStyles(theme => ({
   head: {
-    backgroundColor: theme.palette.common.black,
+    backgroundColor: "#3F51B5",
     color: theme.palette.common.white
   },
   body: {
