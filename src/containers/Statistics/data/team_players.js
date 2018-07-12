@@ -492,13 +492,13 @@ export const playerData = [
       {
         id: 8,
         name: "Ivan Perisic",
-        goals: 1,
-        assists: 0
+        goals: 2,
+        assists: 1
       },
       {
         id: 9,
         name: "Mario Mandzukic",
-        goals: 1,
+        goals: 2,
         assists: 1
       },
       {
@@ -512,6 +512,12 @@ export const playerData = [
         name: "Domagoj Vida",
         goals: 1,
         assists: 0
+      },
+      {
+        id: 11,
+        name: "JSime Vrsaljko",
+        goals: 0,
+        assists: 1
       }
     ]
   },
@@ -978,7 +984,7 @@ export const playerData = [
       {
         id: 5,
         name: "Kieran Trippier",
-        goals: 0,
+        goals: 1,
         assists: 1
       },
       {
