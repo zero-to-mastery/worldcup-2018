@@ -34,3 +34,5 @@ Please add your name to this list along with your Discord name
 -[vinpearland](https://https://github.com/vinpearland/) - Discord: vinpearland
 
 -[gaddes](https://github.com/gaddes) - Discord: MattGaddes
+
+-[codepol](https://github.com/codepol) - Discord: codepol
