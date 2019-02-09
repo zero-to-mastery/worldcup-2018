@@ -196,7 +196,7 @@ class HomePage extends React.Component {
         {!_.isEmpty(matchDetails) ? (
           <div className={styles.match_details}>
             <div className={styles.next_match}>
-              <span> Next Match - {nextMatchDate} </span>
+              <span> Final - {nextMatchDate} </span>
             </div>
             {this.renderTeamDetails()}
           </div>
