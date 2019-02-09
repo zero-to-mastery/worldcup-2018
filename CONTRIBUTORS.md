@@ -36,3 +36,5 @@ Please add your name to this list along with your Discord name
 -[gaddes](https://github.com/gaddes) - Discord: MattGaddes
 
 -[codepol](https://github.com/codepol) - Discord: codepol
+
+-[Johongirrr](https://github.com/Johongirrr) - Discord: Johongir
