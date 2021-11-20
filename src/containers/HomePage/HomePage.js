@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  onRequestData: () => dispatch(setData())
+  onRequestData: () => dispatch(setData());
 });
 
 class HomePage extends React.Component {
@@ -61,14 +61,10 @@ class HomePage extends React.Component {
       matchDates.sort(function(a, b) {
         return new Date(a) - new Date(b);
       });
-      matchDates.some(date => {
-        if (new Date() < new Date(date)) {
-          upcomingMatchDate = date;
-          return true;
-        }
-        return false;
-      });
-    }
+      
+      matchDates.some(date => new Date() < new Date(date)?{upcomingMatchDate = date; return true;}: return false;);
+     
+ 
 
     console.log(knockoutMatches);
 
